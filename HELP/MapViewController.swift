@@ -9,14 +9,34 @@ import UIKit
 import GoogleMaps
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     var locationManager: CLLocationManager!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showGoogleLocation()
+        btnRefresh()
+    }
+    
+    @objc func btnRefreshTapped(_ sender: UIButton) {
+        showGoogleLocation()
+        btnRefresh()
+    }
+    
+    // Add a button to the view.
+    func btnRefresh() {
+        let btnLaunchAc = UIButton(frame: CGRect(x: 5, y: 150, width: 70, height: 35))
+        if #available(iOS 15.0, *) {
+            btnLaunchAc.backgroundColor = .systemCyan
+        } else {
+            btnLaunchAc.backgroundColor = .blue
+        }
+        btnLaunchAc.setTitle("내 위치", for: .normal)
+        btnLaunchAc.addTarget(self, action: #selector(btnRefreshTapped), for: .touchUpInside)
+        self.view.addSubview(btnLaunchAc)
     }
 
+    
     // 구글 지도
     private func showGoogleLocation() {
         locationManager = CLLocationManager()
