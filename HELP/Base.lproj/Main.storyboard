@@ -9,65 +9,123 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Main-->
         <scene sceneID="ld6-qC-BiG">
             <objects>
                 <viewController id="0y3-On-H0g" customClass="MainViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsf-AY-0m3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qlN-DZ-Xut">
+                                <rect key="frame" x="20" y="164" width="374" height="629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgv-BX-R8B">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="304.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="경찰" cornerStyle="small"/>
+                                        <connections>
+                                            <action selector="btnFirstCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="xMa-8H-WwX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E4-IS-cxr">
+                                        <rect key="frame" x="0.0" y="324.5" width="374" height="304.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="병원" cornerStyle="small"/>
+                                        <connections>
+                                            <action selector="btnSecondCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="fFd-Ey-HKx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유저가 설정한 국가를 나타낼거요" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-sj-boY">
+                                <rect key="frame" x="20" y="44" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="l5y-XF-XIz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Uzj-xZ-m7L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Uzj-xZ-m7L" firstAttribute="trailing" secondItem="qlN-DZ-Xut" secondAttribute="trailing" constant="20" id="BzZ-FB-FTu"/>
+                            <constraint firstItem="qlN-DZ-Xut" firstAttribute="leading" secondItem="Uzj-xZ-m7L" secondAttribute="leading" constant="20" id="JMu-WW-33m"/>
+                            <constraint firstItem="qlN-DZ-Xut" firstAttribute="top" secondItem="Uzj-xZ-m7L" secondAttribute="top" constant="120" id="OT0-fz-Edz"/>
+                            <constraint firstItem="kwx-sj-boY" firstAttribute="leading" secondItem="Uzj-xZ-m7L" secondAttribute="leading" constant="20" id="RAj-eF-y2W"/>
+                            <constraint firstItem="Uzj-xZ-m7L" firstAttribute="bottom" secondItem="qlN-DZ-Xut" secondAttribute="bottom" constant="20" id="hmU-ai-hsS"/>
+                            <constraint firstItem="Uzj-xZ-m7L" firstAttribute="trailing" secondItem="kwx-sj-boY" secondAttribute="trailing" constant="20" id="iVo-3C-yPc"/>
+                            <constraint firstItem="kwx-sj-boY" firstAttribute="top" secondItem="Uzj-xZ-m7L" secondAttribute="top" id="loX-Lf-MDM"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="HFe-uL-dKC"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="helm" catalog="system" id="HFe-uL-dKC"/>
+                    <connections>
+                        <outlet property="btnFirstCall" destination="tgv-BX-R8B" id="gKY-sR-f5G"/>
+                        <outlet property="btnSecondCall" destination="2E4-IS-cxr" id="lfc-Ee-hAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83B-KQ-0Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335" y="862"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="6mp-VV-ZWH">
             <objects>
                 <viewController id="mV7-DT-W9b" customClass="ConfigureViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yW8-by-L0l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="RB7-KJ-ZNA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="B2r-DS-khr"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="B2r-DS-khr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98z-Qt-PXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="451" y="862"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="rkO-E7-rwY">
             <objects>
                 <viewController id="Ph6-vV-BLg" customClass="HomeViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FKR-qS-2KK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="어디로 가볼래?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-1R-OFW">
+                                <rect key="frame" x="186" y="191" width="101" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a7I-DS-VYk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="SGm-ae-NT8"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="SGm-ae-NT8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YQ-w3-DSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1120" y="862"/>
+            <point key="canvasLocation" x="-1120.2898550724638" y="861.83035714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="A8i-Qt-t90">
             <objects>
                 <tabBarController id="Ytt-H0-PZp" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hnS-jV-QLo">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="hnS-jV-QLo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ph6-vV-BLg" kind="relationship" relationship="viewControllers" id="7qk-KG-VRd"/>
+                        <segue destination="Q9q-fJ-FdQ" kind="relationship" relationship="viewControllers" id="5Z5-8l-WkY"/>
                         <segue destination="0y3-On-H0g" kind="relationship" relationship="viewControllers" id="82c-CB-36b"/>
                         <segue destination="mV7-DT-W9b" kind="relationship" relationship="viewControllers" id="E7Y-sD-dwE"/>
                     </connections>
@@ -76,10 +134,33 @@
             </objects>
             <point key="canvasLocation" x="-335" y="114"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="4hE-JX-6uH">
+            <objects>
+                <viewController id="Q9q-fJ-FdQ" customClass="MapViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xum-O0-clI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TuM-36-CPf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="b1Y-6h-iYd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36H-Ub-AGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235" y="-278"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="helm" catalog="system" width="128" height="122"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
