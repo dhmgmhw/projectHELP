@@ -26,6 +26,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     // Add a button to the view.
     func btnRefresh() {
         let btnLaunchAc = UIButton(frame: CGRect(x: 5, y: 150, width: 70, height: 35))
+        // check if version available
         if #available(iOS 15.0, *) {
             btnLaunchAc.backgroundColor = .systemCyan
         } else {
