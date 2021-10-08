@@ -17,8 +17,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         showGoogleLocation()
     }
 
+    // 구글 지도
     private func showGoogleLocation() {
-        // 구글 지도 표시하기
         locationManager = CLLocationManager()
         locationManager.delegate = self
         // 앱이 실행될 때 위치 추적 권한 요청
@@ -29,19 +29,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         // 위, 경도 가져오기
         let coor = locationManager.location?.coordinate
-        
         let latitude = (coor?.latitude ?? 37.566508) as Double
         let longitude = (coor?.longitude ?? 126.977945) as Double
-
         
-        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 17.5)
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 17.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         self.view.addSubview(mapView)
         
         // 현재 위치
         let myLocation = CLLocation(latitude: latitude, longitude: longitude)
         let geocoder = CLGeocoder()
-        let locale = Locale(identifier: "Ko-kr")
+        let locale = Locale(identifier: "en_US")
         geocoder.reverseGeocodeLocation(myLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
             if let address: [CLPlacemark] = placemarks {
                 if let name: String = address.last?.name {
