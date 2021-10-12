@@ -12,5 +12,11 @@ class MapViewController: UIViewController  {
     override func viewDidLoad() {
     }
 
+
+    @IBAction func btnPointTapped(_ sender: UIButton) {
+
+    }
+    @IBAction func btnUpdateCurrentRegionTapped(_ sender: UIButton) {
+    }
 }
 

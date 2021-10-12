@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해업!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYs-Ql-tb3">
-                                <rect key="frame" x="171" y="302" width="72" height="42"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해업" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYs-Ql-tb3">
+                                <rect key="frame" x="168" y="326" width="78" height="54"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -28,7 +28,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qYs-Ql-tb3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9eI-z7-vL9"/>
-                            <constraint firstItem="qYs-Ql-tb3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-130" id="ibZ-Qw-9u1"/>
+                            <constraint firstItem="qYs-Ql-tb3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-100" id="ibZ-Qw-9u1"/>
                         </constraints>
                     </view>
                 </viewController>
