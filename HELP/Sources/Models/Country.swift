@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct County {
-    let name: String?
-    let numOfPolice: String?
-    let numOfEmergency: String?
-    let numOfEmbassy: String?
-    let addressOfEmbassy: String?
-    let imgFlag: String?
+struct Country: Codable {
+    let id: String
+    let name: String
+}
+
+//struct Country: Codable {
+//    let name: String?
+//    let numOfPolice: String?
+//    let numOfEmergency: String?
+//    let numOfEmbassy: String?
+//    let addressOfEmbassy: String?
+//    let imgFlag: String?
+//}
+
+enum Countries {
+    case KR
 }
