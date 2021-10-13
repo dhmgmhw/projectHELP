@@ -259,15 +259,14 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-KJ-egC">
-                                <rect key="frame" x="20" y="64" width="374" height="80"/>
+                                <rect key="frame" x="20" y="64" width="374" height="97"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="puo-VZ-Fvu">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="TZW-nR-jeF">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="67P-gJ-dar">
-                                        <rect key="frame" x="0.0" y="49" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="66" width="374" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-SY-ux3">
                                                 <rect key="frame" x="0.0" y="0.0" width="78.5" height="31"/>
@@ -301,6 +300,12 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="TZW-nR-jeF" firstAttribute="top" secondItem="FWc-KJ-egC" secondAttribute="top" id="KCi-bi-fze"/>
+                                    <constraint firstItem="TZW-nR-jeF" firstAttribute="leading" secondItem="FWc-KJ-egC" secondAttribute="leading" id="iSe-3M-4TP"/>
+                                    <constraint firstItem="67P-gJ-dar" firstAttribute="top" secondItem="TZW-nR-jeF" secondAttribute="bottom" constant="15" id="lqL-sM-5GS"/>
+                                    <constraint firstAttribute="trailing" secondItem="TZW-nR-jeF" secondAttribute="trailing" id="o6h-dg-pcu"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cj-VR-TWg">
                                 <rect key="frame" x="337.5" y="749" width="56.5" height="44"/>
@@ -330,6 +335,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="b1Y-6h-iYd"/>
+                    <connections>
+                        <outlet property="mapView" destination="tQs-aL-EDm" id="gqA-Z2-0Ct"/>
+                        <outlet property="searchBar" destination="TZW-nR-jeF" id="rJQ-b4-8UJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36H-Ub-AGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
