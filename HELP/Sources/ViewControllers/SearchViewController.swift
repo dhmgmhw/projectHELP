@@ -11,7 +11,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 
     @IBOutlet weak var tvCountries: UITableView!
     let searchController = UISearchController()
-
+    let list = countries
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +38,14 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 }
 
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let countryName = self.list[indexPath.row]["name"]
+        let countryCode = self.list[indexPath.row]["nationalCode"]
+        
+        UserDefaults.standard.set(countryName, forKey: "name")
+        UserDefaults.standard.set(countryCode, forKey: "nationalCode")
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {

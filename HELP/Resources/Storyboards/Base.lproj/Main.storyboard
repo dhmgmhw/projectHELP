@@ -209,6 +209,12 @@
                                     <segue destination="FsG-cX-Coc" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="FzK-MO-Y1L"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-p8-KdZ">
+                                <rect key="frame" x="20" y="572" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a7I-DS-VYk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -217,13 +223,19 @@
                             <constraint firstItem="Erj-hA-I56" firstAttribute="centerY" secondItem="FKR-qS-2KK" secondAttribute="centerY" id="5BU-Ps-odU"/>
                             <constraint firstItem="sXq-p9-X3f" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="8n0-iO-PY3"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="top" secondItem="sXq-p9-X3f" secondAttribute="bottom" constant="29.5" id="AIn-Uf-TjU"/>
+                            <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="NW2-p8-KdZ" secondAttribute="trailing" constant="20" id="ECQ-GB-u0p"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="O3M-1Y-cxC"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="Erj-hA-I56" secondAttribute="trailing" constant="20" id="Rq0-pK-3sw"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="sXq-p9-X3f" secondAttribute="trailing" constant="20" id="dxF-IZ-4eH"/>
                             <constraint firstItem="w3A-g1-Abc" firstAttribute="top" secondItem="a7I-DS-VYk" secondAttribute="top" constant="30" id="g9Q-1G-vLn"/>
+                            <constraint firstItem="NW2-p8-KdZ" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="q1q-e6-oiC"/>
+                            <constraint firstItem="NW2-p8-KdZ" firstAttribute="top" secondItem="Erj-hA-I56" secondAttribute="bottom" constant="150" id="wRe-D7-W1l"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="SGm-ae-NT8"/>
+                    <connections>
+                        <outlet property="lblCurrentCountry" destination="NW2-p8-KdZ" id="cx7-fI-rVX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YQ-w3-DSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -407,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eon-mk-h2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1907" y="2231"/>
+            <point key="canvasLocation" x="-1062" y="2268"/>
         </scene>
     </scenes>
     <resources>
