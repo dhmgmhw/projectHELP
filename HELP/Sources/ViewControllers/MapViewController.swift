@@ -25,7 +25,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     private func showMap() {
         if CLLocationManager.locationServicesEnabled() {
             if locationManager.authorizationStatus == .denied || locationManager.authorizationStatus == .restricted {
-                    let alert = UIAlertController(title: "오류", message: "위치 서비스 기능이 꺼져있음", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "오류", message: "위치 서비스 기능 허용이 필요합니다", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
