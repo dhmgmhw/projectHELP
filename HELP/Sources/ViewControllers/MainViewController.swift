@@ -8,17 +8,28 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var btnFirstCall: UIButton!
     
     var firstCallNum: String?
-    
+    var secondCallNum: String?
+    var thirdCallNum: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         firstCallNum = "01088187907"
     }
 
-    @IBAction func btnFirstCallTapped(_ sender: UIButton) {
-        btnCallTapped(firstCallNum)
+    @IBAction func btnCallTapped(_ sender: UIButton) {
+        let btnTitle = sender.currentTitle
+        switch btnTitle {
+        case "경찰":
+            btnCallTapped(firstCallNum)
+        case "병원":
+            btnCallTapped(secondCallNum)
+        case "대사관":
+            btnCallTapped(thirdCallNum)
+        default:
+            break
+        }
     }
 
     private func btnCallTapped(_ number: String?) {
