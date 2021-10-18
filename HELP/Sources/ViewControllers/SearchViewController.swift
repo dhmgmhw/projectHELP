@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController, UISearchResultsUpdating {
 
     @IBOutlet weak var tvCountries: UITableView!
     let searchController = UISearchController()
     let list = countries
+    
+    var listData: [Nation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +23,10 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         tvCountries.register(nibName, forCellReuseIdentifier: "CountryCell")
         tvCountries.delegate = self
         tvCountries.dataSource = self
-        
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
-        
+    
+        getList()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -33,6 +36,37 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     
     @IBAction func btnBack(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
+    }
+    
+    
+    func getList() {
+        let url = "https://6155639c93e3550017b08978.mockapi.io/countries"
+        // AF.request().responseJSON으로 호출하면 JSON형식의 response를 받는다.
+        AF.request(url, method: .get).responseJSON { response in
+            // response의 데이터를 받을 [Nation] 타입의 리스트 변수
+            var countries: [Nation]
+            do {
+                let decoder = JSONDecoder()
+                switch (response.result) {
+                // 성공/실패 구분
+                case .success:
+                    // response의 data를 [Nation]로 변환
+                    countries = try decoder.decode([Nation].self, from: response.data!)
+                    debugPrint("출력결과 : \(countries)")
+                    print(type(of: countries))
+                    self.listData = countries
+                    // reload Data!
+                    DispatchQueue.main.async {
+                        self.tvCountries.reloadData()
+                    }
+                case .failure(let error):
+                    print("에러코드: \(error._code)")
+                    print("에러사유: \(error.errorDescription!)")
+                }
+            } catch let parsingError {
+                print("에러:", parsingError)
+            }
+        }.resume()
     }
     
 }
@@ -49,7 +83,6 @@ extension SearchViewController: UITableViewDelegate {
 }
 
 extension SearchViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
@@ -60,5 +93,4 @@ extension SearchViewController: UITableViewDataSource {
         cell.imgFlag.image = UIImage(named: "\(countries[indexPath.row]["nationalCode"]!.lowercased()).png")
         return cell
     }
-
 }

@@ -12,16 +12,28 @@ struct Country: Codable {
     let name: String
 }
 
-//struct Country: Codable {
-//    let name: String?
-//    let numOfPolice: String?
-//    let numOfEmergency: String?
-//    let numOfEmbassy: String?
-//    let addressOfEmbassy: String?
-//    let imgFlag: String?
-//}
+struct Nation: Codable {
+    let nationCode: String
+    let nationName: String
+    let policeCall: String
+    let fireCall: String
+    let embassyCall: String
+    let embassyLoc: String
+    
+    enum CodingKeys: String, CodingKey {
+        case nationCode = "nation_code"
+        case nationName = "nation_name"
+        case policeCall = "police_call"
+        case fireCall = "fire_call"
+        case embassyCall = "embassy_call"
+        case embassyLoc = "embassy_loc"
+    }
+}
 
-var countries = [
+
+
+
+public var countries = [
     ["nationalCode":"KR", "name":"대한민국"],
     ["nationalCode":"AU", "name":"호주"],
     ["nationalCode":"CA", "name":"캐나다"],
@@ -39,3 +51,4 @@ var countries = [
     ["nationalCode":"US", "name":"미국"],
     ["nationalCode":"VN", "name":"베트남"],
 ]
+
