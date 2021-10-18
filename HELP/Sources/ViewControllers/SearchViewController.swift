@@ -73,24 +73,23 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let countryName = self.list[indexPath.row]["name"]
-        let countryCode = self.list[indexPath.row]["nationalCode"]
-        
-        UserDefaults.standard.set(countryName, forKey: "name")
-        UserDefaults.standard.set(countryCode, forKey: "nationalCode")
+        let nationName = self.listData[indexPath.row].nationName
+        let nationCode = self.listData[indexPath.row].nationCode
+        UserDefaults.standard.set(nationName, forKey: "nationName")
+        UserDefaults.standard.set(nationCode, forKey: "nationCode")
         dismiss(animated: true, completion: nil)
     }
 }
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return listData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as? CountryCell else { return UITableViewCell() }
-        cell.lblCountry.text = "\(countries[indexPath.row]["name"]!)"
-        cell.imgFlag.image = UIImage(named: "\(countries[indexPath.row]["nationalCode"]!.lowercased()).png")
+        cell.lblCountry.text = "\(listData[indexPath.row].nationName)"
+        cell.imgFlag.image = UIImage(named: "\(listData[indexPath.row].nationCode.lowercased()).png")
         return cell
     }
 }

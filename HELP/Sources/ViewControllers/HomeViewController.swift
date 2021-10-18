@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let country = UserDefaults.standard.string(forKey: "name") else { return }
+        guard let country = UserDefaults.standard.string(forKey: "nationName") else { return }
         lblCurrentCountry.text = country
     }
     
