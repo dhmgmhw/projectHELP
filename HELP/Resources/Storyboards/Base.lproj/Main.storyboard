@@ -321,7 +321,6 @@
         <!--홈-->
         <scene sceneID="jA0-T6-xJi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMh-mz-K2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FsG-cX-Coc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" id="dqd-KJ-7jJ"/>
                     <toolbarItems/>
@@ -339,13 +338,13 @@
                         <segue destination="AIi-PB-0Kh" kind="relationship" relationship="rootViewController" id="EB7-Xt-lyY"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMh-mz-K2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1062" y="1554"/>
+            <point key="canvasLocation" x="-1062" y="1615"/>
         </scene>
         <!--어디가세요?-->
         <scene sceneID="DQw-X6-NSg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eon-mk-h2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="AIi-PB-0Kh" customClass="SearchViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhV-iR-myz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -376,8 +375,9 @@
                         <outlet property="tvCountries" destination="r7e-nw-bpF" id="6y9-No-fXu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eon-mk-h2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368" y="1554"/>
+            <point key="canvasLocation" x="-368" y="1615"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -8,11 +8,19 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var lblCurrentNation: UILabel!
     
     var firstCallNum: String?
     var secondCallNum: String?
     var thirdCallNum: String?
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let country = UserDefaults.standard.string(forKey: "nationName") else { return }
+        lblCurrentNation.text = country
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         firstCallNum = "01088187907"
@@ -39,5 +47,4 @@ class MainViewController: UIViewController {
             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
         }
     }
-
 }

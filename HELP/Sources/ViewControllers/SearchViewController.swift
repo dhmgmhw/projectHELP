@@ -15,7 +15,14 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     let list = countries
     
     var listData: [Nation] = []
-    
+    var filteredList: [Nation] = []
+    var isFiltering: Bool {
+        let searchController = self.navigationItem.searchController
+        let isActive = searchController?.isActive ?? false
+        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
+        return isActive && isSearchBarHasText
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +37,9 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        print(text)
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        self.filteredList = self.listData.filter { $0.nationName.lowercased().contains(text) }
+        self.tvCountries.reloadData()
     }
     
     @IBAction func btnBack(_ sender: UIBarButtonItem) {
@@ -83,13 +91,19 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listData.count
+        return self.isFiltering ? self.filteredList.count : self.listData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as? CountryCell else { return UITableViewCell() }
-        cell.lblCountry.text = "\(listData[indexPath.row].nationName)"
-        cell.imgFlag.image = UIImage(named: "\(listData[indexPath.row].nationCode.lowercased()).png")
+        // 필터링된 리스트 반환
+        if self.isFiltering {
+            cell.lblCountry.text = "\(filteredList[indexPath.row].nationName)"
+            cell.imgFlag.image = UIImage(named: "\(filteredList[indexPath.row].nationCode.lowercased()).png")
+        } else {
+            cell.lblCountry.text = "\(listData[indexPath.row].nationName)"
+            cell.imgFlag.image = UIImage(named: "\(listData[indexPath.row].nationCode.lowercased()).png")
+        }
         return cell
     }
 }
