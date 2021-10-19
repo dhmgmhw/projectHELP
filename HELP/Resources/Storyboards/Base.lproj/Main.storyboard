@@ -282,10 +282,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cj-VR-TWg">
-                                <rect key="frame" x="337.5" y="749" width="56.5" height="44"/>
+                                <rect key="frame" x="334.5" y="649" width="59.5" height="44"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="" imagePadding="0.0">
-                                    <imageReference key="image" image="person.fill" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="location.fill" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
                                     <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
@@ -302,7 +302,7 @@
                             <constraint firstItem="TuM-36-CPf" firstAttribute="trailing" secondItem="tQs-aL-EDm" secondAttribute="trailing" id="Oyp-YI-jfT"/>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="bottom" secondItem="tQs-aL-EDm" secondAttribute="bottom" id="V2k-2N-QZC"/>
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="leading" secondItem="TuM-36-CPf" secondAttribute="leading" id="a27-5s-aTs"/>
-                            <constraint firstItem="TuM-36-CPf" firstAttribute="bottom" secondItem="3cj-VR-TWg" secondAttribute="bottom" constant="20" id="bVE-aF-SvW"/>
+                            <constraint firstItem="TuM-36-CPf" firstAttribute="bottom" secondItem="3cj-VR-TWg" secondAttribute="bottom" constant="120" id="bVE-aF-SvW"/>
                             <constraint firstItem="FWc-KJ-egC" firstAttribute="leading" secondItem="TuM-36-CPf" secondAttribute="leading" constant="20" id="btW-Ba-KNf"/>
                             <constraint firstAttribute="trailing" secondItem="FWc-KJ-egC" secondAttribute="trailing" constant="20" id="g1v-bw-QDu"/>
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" id="vQ6-Re-gtV"/>
@@ -316,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36H-Ub-AGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320" y="862"/>
+            <point key="canvasLocation" x="318.84057971014494" y="861.83035714285711"/>
         </scene>
         <!--홈-->
         <scene sceneID="jA0-T6-xJi">
@@ -387,8 +387,8 @@
         <image name="helm" catalog="system" width="128" height="122"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="kr.png" width="640" height="427"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
