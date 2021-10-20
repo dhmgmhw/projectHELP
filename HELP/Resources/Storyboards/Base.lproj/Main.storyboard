@@ -232,7 +232,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-KJ-egC">
-                                <rect key="frame" x="20" y="64" width="374" height="97"/>
+                                <rect key="frame" x="20" y="74" width="374" height="97"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZW-nR-jeF">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
@@ -298,7 +298,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="trailing" secondItem="3cj-VR-TWg" secondAttribute="trailing" constant="20" id="1Pc-I9-Q6z"/>
-                            <constraint firstItem="FWc-KJ-egC" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" constant="20" id="92K-n2-mry"/>
+                            <constraint firstItem="FWc-KJ-egC" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" constant="30" id="92K-n2-mry"/>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="trailing" secondItem="tQs-aL-EDm" secondAttribute="trailing" id="Oyp-YI-jfT"/>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="bottom" secondItem="tQs-aL-EDm" secondAttribute="bottom" id="V2k-2N-QZC"/>
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="leading" secondItem="TuM-36-CPf" secondAttribute="leading" id="a27-5s-aTs"/>

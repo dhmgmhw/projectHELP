@@ -76,7 +76,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
             }
         }.resume()
     }
-    
 }
 
 extension SearchViewController: UITableViewDelegate {
