@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     override func viewDidLoad() {
+        searchBar.delegate = self
         showMap()
     }
     
@@ -68,7 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 
     // search place and make annotation mark function
-    private func searchPlaces(_ searchText: String) {
+    func searchPlaces(_ searchText: String) {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = searchText
         searchRequest.region = mapView.region
@@ -79,11 +80,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 print("Error: \(error?.localizedDescription ?? "Unknown error").")
                 return
             }
-
+            // 어노테이션 제거 함수 call
+            self.removeAllAnnotations()
             for item in response.mapItems {
                 if let name = item.name,
                     let location = item.placemark.location {
-                    print("검색결과 -> \(name): \(location.coordinate.latitude),\(location.coordinate.longitude)")
+                    print("검색결과 -> \(location): \(location.coordinate.latitude),\(location.coordinate.longitude)")
                     let latitude = location.coordinate.latitude
                     let longitude = location.coordinate.longitude
                     let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta:0.1, longitudeDelta:0.1))
@@ -91,6 +93,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     annotation.title = name
+                    let address = item.placemark.description.components(separatedBy: " @")[0]
+                    annotation.subtitle = address
                     self.mapView.addAnnotation(annotation)
                 }
             }
@@ -118,6 +122,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        }
 //    }
     
+    // 어노테이션 제거 함수
+    func removeAllAnnotations() {
+        let annotations = mapView.annotations.filter {
+            $0 !== self.mapView.userLocation
+        }
+        mapView.removeAnnotations(annotations)
+    }
+    
     func setMyLocationInfo() {
         findAddr(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude)
     }
@@ -143,3 +155,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
 }
 
+extension MapViewController: UISearchBarDelegate {
+    // searchBar 검색버튼 눌렀을때
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let text = self.searchBar.text
+        guard let text = text else { return }
+        self.searchPlaces(text)
+    }
+}

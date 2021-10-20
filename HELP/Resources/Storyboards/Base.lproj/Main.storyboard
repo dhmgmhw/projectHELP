@@ -238,6 +238,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="67P-gJ-dar">
                                         <rect key="frame" x="0.0" y="66" width="374" height="31"/>
@@ -311,7 +315,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="b1Y-6h-iYd"/>
                     <connections>
                         <outlet property="mapView" destination="tQs-aL-EDm" id="gqA-Z2-0Ct"/>
-                        <outlet property="searchBar" destination="TZW-nR-jeF" id="rJQ-b4-8UJ"/>
+                        <outlet property="searchBar" destination="TZW-nR-jeF" id="Nqo-Fv-N5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36H-Ub-AGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
