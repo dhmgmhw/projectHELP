@@ -67,7 +67,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         })
     }
-
+    
     // search place and make annotation mark function
     func searchPlaces(_ searchText: String) {
         let searchRequest = MKLocalSearch.Request()
@@ -80,8 +80,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 print("Error: \(error?.localizedDescription ?? "Unknown error").")
                 return
             }
+            
             // 어노테이션 제거 함수 call
             self.removeAllAnnotations()
+            
             for item in response.mapItems {
                 if let name = item.name,
                     let location = item.placemark.location {
@@ -146,6 +148,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     @IBAction func btnPointTapped(_ sender: UIButton) {
+        if sender.currentTitle == "경찰서" {
+            searchPlaces("police station")
+        } else {
+            searchPlaces("hospital")
+        }
     }
     
     // return to my location
@@ -161,5 +168,7 @@ extension MapViewController: UISearchBarDelegate {
         let text = self.searchBar.text
         guard let text = text else { return }
         self.searchPlaces(text)
+        // searchBar keyboard dismiss
+        self.searchBar.endEditing(true)
     }
 }
