@@ -85,7 +85,13 @@ extension SearchViewController: UITableViewDelegate {
         let nationCode = self.listData[indexPath.row].nationCode
         UserDefaults.standard.set(nationName, forKey: "nationName")
         UserDefaults.standard.set(nationCode, forKey: "nationCode")
-        dismiss(animated: true, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "popUpView") as! PopUpViewController
+        vc.modalPresentationStyle = .currentContext
+        self.present(vc, animated: false, completion: nil)
+
+
+//        dismiss(animated: true, completion: nil)
     }
 }
 
