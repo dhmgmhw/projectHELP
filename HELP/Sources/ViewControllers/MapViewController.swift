@@ -103,26 +103,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-//    private func searchPlaces(_ searchText: String) {
-//        let searchRequest = MKLocalSearch.Request()
-//        searchRequest.naturalLanguageQuery = searchText
-//        searchRequest.region = mapView.region
-//
-//        let search = MKLocalSearch(request: searchRequest)
-//        search.start { response, error in
-//            guard let response = response else {
-//                print("Error: \(error?.localizedDescription ?? "Unknown error").")
-//                return
-//            }
-//
-//            for item in response.mapItems {
-//                if let name = item.name,
-//                    let location = item.placemark.location {
-//                    print("검색결과 -> \(name): \(location.coordinate.latitude),\(location.coordinate.longitude)")
-//                }
-//            }
-//        }
-//    }
     
     // 어노테이션 제거 함수
     func removeAllAnnotations() {
@@ -132,6 +112,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.removeAnnotations(annotations)
     }
     
+    // 내 위치 정보 불러오기 함수
     func setMyLocationInfo() {
         findAddr(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude)
     }
