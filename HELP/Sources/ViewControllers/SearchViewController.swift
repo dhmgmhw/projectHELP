@@ -60,8 +60,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                 case .success:
                     // response의 data를 [Nation]로 변환
                     countries = try decoder.decode([Nation].self, from: response.data!)
-                    debugPrint("출력결과 : \(countries)")
-                    print(type(of: countries))
                     self.listData = countries
                     // reload Data!
                     DispatchQueue.main.async {
@@ -70,6 +68,9 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                 case .failure(let error):
                     print("에러코드: \(error._code)")
                     print("에러사유: \(error.errorDescription!)")
+                    let alert = UIAlertController(title: "오류", message: "서버와의 연결이 불안정합니다. 네트워크 환경에서 다시 시도해주세요.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                    self.present(alert, animated: true)
                 }
             } catch let parsingError {
                 print("에러:", parsingError)
