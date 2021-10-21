@@ -14,6 +14,11 @@ class PopUpViewController: UIViewController {
 
     }
     
-
-
+    @IBAction func btnSetTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func btnCancelTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
