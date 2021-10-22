@@ -29,11 +29,11 @@ class MainViewController: UIViewController {
     @IBAction func btnCallTapped(_ sender: UIButton) {
         let btnTitle = sender.currentTitle
         switch btnTitle {
-        case "경찰":
+        case "Police":
             btnCallTapped(firstCallNum)
-        case "병원":
+        case "Hospital":
             btnCallTapped(secondCallNum)
-        case "대사관":
+        case "Ambassy":
             btnCallTapped(thirdCallNum)
         default:
             break
