@@ -15,10 +15,7 @@ class PopUpViewController: UIViewController {
     }
     
     @IBAction func btnSetTapped(_ sender: UIButton) {
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func btnCancelTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
 }
