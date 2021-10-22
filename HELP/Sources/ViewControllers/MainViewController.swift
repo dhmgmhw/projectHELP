@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstCallNum = "01088187907"
+        firstCallNum = "+0821088187907"
     }
 
     @IBAction func btnCallTapped(_ sender: UIButton) {
