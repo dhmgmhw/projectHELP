@@ -87,7 +87,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             for item in response.mapItems {
                 if let name = item.name,
                     let location = item.placemark.location {
-                    print("검색결과 -> \(location): \(location.coordinate.latitude),\(location.coordinate.longitude)")
                     let latitude = location.coordinate.latitude
                     let longitude = location.coordinate.longitude
                     let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta:0.1, longitudeDelta:0.1))

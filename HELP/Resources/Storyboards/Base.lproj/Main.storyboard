@@ -171,6 +171,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-BD-TmQ">
+                                <rect key="frame" x="174" y="685" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="btnConnectionTestTapped:" destination="Ph6-vV-BLg" eventType="touchUpInside" id="Sht-Zi-hC8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a7I-DS-VYk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -510,7 +519,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ioK-z2-a1q"/>
+        <segue reference="FzK-MO-Y1L"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo.png" width="80" height="72"/>

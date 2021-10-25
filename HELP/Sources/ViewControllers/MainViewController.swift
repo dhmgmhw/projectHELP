@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         guard let country = UserDefaults.standard.string(forKey: "nationName") else { return }
         lblCurrentNation.text = country
-
     }
     
     override func viewDidLoad() {
