@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     }
     
     func getTest() {
-            let url = "https://6155639c93e3550017b08978.mockapi.io/countries"
+            let url = "http://15.165.137.195:8090/HelpAPI-0.0.1-SNAPSHOT/nation/?secretKey=sixballs-cop"
             AF.request(url,
                        method: .get,
                        parameters: nil,

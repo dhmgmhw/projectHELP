@@ -254,7 +254,7 @@
                                         <rect key="frame" x="0.0" y="66" width="374" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-SY-ux3">
-                                                <rect key="frame" x="0.0" y="0.0" width="98" height="31"/>
+                                                <rect key="frame" x="8" y="0.0" width="92.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="경찰서">
                                                     <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -264,7 +264,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="391-qT-NTV">
-                                                <rect key="frame" x="138" y="0.0" width="98" height="31"/>
+                                                <rect key="frame" x="140.5" y="0.0" width="93" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="병원">
                                                     <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -274,13 +274,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-Kq-rCG">
-                                                <rect key="frame" x="276" y="0.0" width="98" height="31"/>
+                                                <rect key="frame" x="273.5" y="0.0" width="92.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="대사관">
                                                     <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>

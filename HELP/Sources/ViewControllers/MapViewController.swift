@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
+class MapViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -19,6 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         searchBar.delegate = self
+        mapView.delegate = self
         showMap()
     }
     
@@ -150,5 +151,17 @@ extension MapViewController: UISearchBarDelegate {
         self.searchPlaces(text)
         // searchBar keyboard dismiss
         self.searchBar.endEditing(true)
+    }
+}
+
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation else { return }
+        print(annotation.coordinate.latitude)
+        print(annotation.coordinate.longitude)
+        guard let chaining = annotation.subtitle else { return }
+        guard let subtitle = chaining else { return }
+        print(subtitle)
     }
 }
