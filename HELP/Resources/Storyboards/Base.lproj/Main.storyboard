@@ -392,6 +392,11 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="dYz-Rq-BX4">
+                                <rect key="frame" x="189" y="430" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zXY-7o-qyl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -410,6 +415,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="dYz-Rq-BX4" id="LUa-ZE-zWy"/>
                         <outlet property="tvCountries" destination="r7e-nw-bpF" id="6y9-No-fXu"/>
                     </connections>
                 </viewController>
