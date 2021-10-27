@@ -37,7 +37,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="대한민국">
                                                     <attributes>
-                                                        <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
+                                                        <font key="NSFont" metaFont="system" size="18"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -147,7 +147,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sXq-p9-X3f">
                                 <rect key="frame" x="20" y="294" width="374" height="68"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누구누구 님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-0D-pnA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번에는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-0D-pnA">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
@@ -174,14 +174,14 @@
                                     <constraint firstAttribute="height" constant="30" id="g7c-nY-aBq"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" imagePadding="0.0">
-                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                                <buttonConfiguration key="configuration" style="filled" title="  " imagePadding="0.0">
+                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
                                     <backgroundConfiguration key="background" strokeWidth="3" strokeOutset="3">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="strokeColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
-                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="10"/>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="3"/>
                                     <color key="baseForegroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -195,7 +195,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-BD-TmQ">
-                                <rect key="frame" x="174" y="685" width="67" height="31"/>
+                                <rect key="frame" x="132" y="481" width="151" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
@@ -545,7 +545,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1AD-Kw-UFE"/>
+        <segue reference="FzK-MO-Y1L"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Frame.png" width="63.333332061767578" height="51.666667938232422"/>
