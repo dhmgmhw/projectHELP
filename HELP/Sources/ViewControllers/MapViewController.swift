@@ -13,6 +13,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //Float Panel
+    @IBOutlet weak var floatingView: UIView!
+    @IBOutlet weak var lblPlaceName: UILabel!
+    @IBOutlet weak var lblDistance: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    
+//    var foundPlace: String?
+    
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
@@ -21,6 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         searchBar.delegate = self
         mapView.delegate = self
         showMap()
+        floatingView.isHidden = true
     }
     
     private func showMap() {
@@ -158,8 +167,8 @@ extension MapViewController: UISearchBarDelegate {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation else { return }
-        print(annotation.coordinate.latitude)
-        print(annotation.coordinate.longitude)
+//        print(annotation.coordinate.latitude)
+//        print(annotation.coordinate.longitude)
         guard let chaining = annotation.subtitle else { return }
         guard let subtitle = chaining else { return }
         print(subtitle)

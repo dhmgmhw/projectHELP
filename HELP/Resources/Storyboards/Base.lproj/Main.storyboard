@@ -188,12 +188,6 @@
                                     <segue destination="FsG-cX-Coc" kind="presentation" modalPresentationStyle="fullScreen" id="FzK-MO-Y1L"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-p8-KdZ">
-                                <rect key="frame" x="20" y="571.5" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-BD-TmQ">
                                 <rect key="frame" x="132" y="481" width="151" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -211,19 +205,13 @@
                             <constraint firstItem="Erj-hA-I56" firstAttribute="centerY" secondItem="FKR-qS-2KK" secondAttribute="centerY" id="5BU-Ps-odU"/>
                             <constraint firstItem="sXq-p9-X3f" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="8n0-iO-PY3"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="top" secondItem="sXq-p9-X3f" secondAttribute="bottom" constant="29.5" id="AIn-Uf-TjU"/>
-                            <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="NW2-p8-KdZ" secondAttribute="trailing" constant="20" id="ECQ-GB-u0p"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="O3M-1Y-cxC"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="Erj-hA-I56" secondAttribute="trailing" constant="20" id="Rq0-pK-3sw"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="sXq-p9-X3f" secondAttribute="trailing" constant="20" id="dxF-IZ-4eH"/>
                             <constraint firstItem="w3A-g1-Abc" firstAttribute="top" secondItem="a7I-DS-VYk" secondAttribute="top" constant="30" id="g9Q-1G-vLn"/>
-                            <constraint firstItem="NW2-p8-KdZ" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="q1q-e6-oiC"/>
-                            <constraint firstItem="NW2-p8-KdZ" firstAttribute="top" secondItem="Erj-hA-I56" secondAttribute="bottom" constant="150" id="wRe-D7-W1l"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="home.png" selectedImage="home.fill.png" id="SGm-ae-NT8"/>
-                    <connections>
-                        <outlet property="lblCurrentCountry" destination="NW2-p8-KdZ" id="cx7-fI-rVX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YQ-w3-DSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,23 +319,67 @@
                                     <action selector="btnUpdateCurrentRegionTapped:" destination="Q9q-fJ-FdQ" eventType="touchUpInside" id="2Qm-hp-gW8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-bI-biF">
+                                <rect key="frame" x="20" y="663" width="374" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pb3-gd-ZLU">
+                                        <rect key="frame" x="20" y="10" width="334" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미지정 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-uG-VP1">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="45.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTs-wd-a5P">
+                                                <rect key="frame" x="0.0" y="45.5" width="334" height="52"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 불러 올 수 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKZ-Uc-jAO">
+                                                <rect key="frame" x="0.0" y="97.5" width="334" height="32.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="pb3-gd-ZLU" firstAttribute="top" secondItem="xIB-bI-biF" secondAttribute="top" constant="10" id="ILV-5g-KHL"/>
+                                    <constraint firstAttribute="height" constant="150" id="OfM-BU-hx9"/>
+                                    <constraint firstAttribute="trailing" secondItem="pb3-gd-ZLU" secondAttribute="trailing" constant="20" id="Pgp-bR-SvN"/>
+                                    <constraint firstItem="pb3-gd-ZLU" firstAttribute="leading" secondItem="xIB-bI-biF" secondAttribute="leading" constant="20" id="bLa-QM-Tfi"/>
+                                    <constraint firstAttribute="bottom" secondItem="pb3-gd-ZLU" secondAttribute="bottom" id="j1u-qD-Ajd"/>
+                                    <constraint firstAttribute="bottom" secondItem="pb3-gd-ZLU" secondAttribute="bottom" constant="10" id="zA8-Ed-j8G"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TuM-36-CPf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="trailing" secondItem="3cj-VR-TWg" secondAttribute="trailing" constant="20" id="1Pc-I9-Q6z"/>
                             <constraint firstItem="FWc-KJ-egC" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" constant="30" id="92K-n2-mry"/>
+                            <constraint firstItem="xIB-bI-biF" firstAttribute="leading" secondItem="TuM-36-CPf" secondAttribute="leading" constant="20" id="IAI-mF-kr6"/>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="trailing" secondItem="tQs-aL-EDm" secondAttribute="trailing" id="Oyp-YI-jfT"/>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="bottom" secondItem="tQs-aL-EDm" secondAttribute="bottom" id="V2k-2N-QZC"/>
+                            <constraint firstItem="xIB-bI-biF" firstAttribute="bottom" secondItem="TuM-36-CPf" secondAttribute="bottom" id="XCw-ak-srL"/>
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="leading" secondItem="TuM-36-CPf" secondAttribute="leading" id="a27-5s-aTs"/>
                             <constraint firstItem="TuM-36-CPf" firstAttribute="bottom" secondItem="3cj-VR-TWg" secondAttribute="bottom" constant="20" id="bVE-aF-SvW"/>
                             <constraint firstItem="FWc-KJ-egC" firstAttribute="leading" secondItem="TuM-36-CPf" secondAttribute="leading" constant="20" id="btW-Ba-KNf"/>
                             <constraint firstAttribute="trailing" secondItem="FWc-KJ-egC" secondAttribute="trailing" constant="20" id="g1v-bw-QDu"/>
+                            <constraint firstItem="TuM-36-CPf" firstAttribute="trailing" secondItem="xIB-bI-biF" secondAttribute="trailing" constant="20" id="rlk-k1-lJT"/>
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" id="vQ6-Re-gtV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="지도" image="map.png" selectedImage="map.fill.png" id="b1Y-6h-iYd"/>
                     <connections>
+                        <outlet property="floatingView" destination="xIB-bI-biF" id="hIP-nA-gwu"/>
+                        <outlet property="lblAddress" destination="UKZ-Uc-jAO" id="OB5-PZ-wyu"/>
+                        <outlet property="lblDistance" destination="uTs-wd-a5P" id="hog-YT-0gU"/>
+                        <outlet property="lblPlaceName" destination="Il2-uG-VP1" id="98U-8n-BJC"/>
                         <outlet property="mapView" destination="tQs-aL-EDm" id="gqA-Z2-0Ct"/>
                         <outlet property="searchBar" destination="TZW-nR-jeF" id="Nqo-Fv-N5k"/>
                     </connections>
@@ -554,7 +586,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1AD-Kw-UFE"/>
+        <segue reference="FzK-MO-Y1L"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Frame.png" width="63.333332061767578" height="51.666667938232422"/>
