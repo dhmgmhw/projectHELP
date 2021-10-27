@@ -25,13 +25,13 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnShadow(btn: btnCallPolice)
-        btnShadow(btn: btnCallHospital)
-        btnShadow(btn: btnCallAmbassy)
+        btnShadow(btnCallPolice)
+        btnShadow(btnCallHospital)
+        btnShadow(btnCallAmbassy)
         firstCallNum = "01088187907"
     }
     
-    func btnShadow(btn: UIButton){
+    func btnShadow(_ btn: UIButton){
         btn.layer.shadowColor = UIColor.black.cgColor
         btn.layer.masksToBounds = false
         btn.layer.shadowOffset = CGSize(width: 4, height: 4)
