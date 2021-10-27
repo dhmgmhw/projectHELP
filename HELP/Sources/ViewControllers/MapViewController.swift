@@ -171,6 +171,16 @@ extension MapViewController: MKMapViewDelegate {
 //        print(annotation.coordinate.longitude)
         guard let chaining = annotation.subtitle else { return }
         guard let subtitle = chaining else { return }
-        print(subtitle)
+        floatingView.isHidden = false
+        let name = subtitle.components(separatedBy: ",")
+        
+        var foundLocation: CLLocation {
+            .init(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        }
+        
+        lblPlaceName.text = name[0]
+        lblAddress.text = name[1]
+        guard let distance = currentLocation?.distance(from: foundLocation) else { return }
+        lblDistance.text = "\(String( ceil(distance) / 1000 )) Km"
     }
 }
