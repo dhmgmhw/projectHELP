@@ -8,7 +8,10 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var lblCurrentNation: UILabel!
+    @IBOutlet weak var btnCurrentNation: UIButton!
+    @IBOutlet weak var btnCallPolice: UIButton!
+    @IBOutlet weak var btnCallHospital: UIButton!
+    @IBOutlet weak var btnCallAmbassy: UIButton!
     
     var firstCallNum: String?
     var secondCallNum: String?
@@ -17,22 +20,33 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let country = UserDefaults.standard.string(forKey: "nationName") else { return }
-        lblCurrentNation.text = country
+        btnCurrentNation.setTitle(country, for: .normal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstCallNum = "+0821088187907"
+        btnShadow(btn: btnCallPolice)
+        btnShadow(btn: btnCallHospital)
+        btnShadow(btn: btnCallAmbassy)
+        firstCallNum = "01088187907"
     }
-
+    
+    func btnShadow(btn: UIButton){
+        btn.layer.shadowColor = UIColor.black.cgColor
+        btn.layer.masksToBounds = false
+        btn.layer.shadowOffset = CGSize(width: 4, height: 4)
+        btn.layer.shadowRadius = 5
+        btn.layer.shadowOpacity = 0.7
+    }
+    
     @IBAction func btnCallTapped(_ sender: UIButton) {
         let btnTitle = sender.currentTitle
         switch btnTitle {
-        case "Police":
+        case "경찰":
             btnCallTapped(firstCallNum)
-        case "Hospital":
+        case "병원":
             btnCallTapped(secondCallNum)
-        case "Ambassy":
+        case "대사/영사관":
             btnCallTapped(thirdCallNum)
         default:
             break

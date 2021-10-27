@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
+        <!--긴급전화-->
         <scene sceneID="ld6-qC-BiG">
             <objects>
                 <viewController id="0y3-On-H0g" customClass="MainViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,82 +19,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Tzp-Rv-Ame">
-                                <rect key="frame" x="20" y="74" width="374" height="70"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tzp-Rv-Ame">
+                                <rect key="frame" x="20" y="74" width="374" height="30"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-d0-ryb">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="56"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재국가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-ku-o9G">
-                                                <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC6-Lz-ntx">
-                                                <rect key="frame" x="0.0" y="35.5" width="59" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1u-xa-MeP">
-                                        <rect key="frame" x="298" y="0.0" width="76" height="32"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="국가변경">
-                                            <fontDescription key="titleFontDescription" type="italicSystem" pointSize="15"/>
-                                        </buttonConfiguration>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place.png" translatesAutoresizingMaskIntoConstraints="NO" id="S7S-rI-dNh">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="f80-ah-ovd"/>
+                                            <constraint firstAttribute="height" constant="30" id="ksU-me-o4Z"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkE-Yr-BQd">
+                                        <rect key="frame" x="33" y="0.0" width="341" height="30"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="대한민국">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="titleColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
-                                            <segue destination="FsG-cX-Coc" kind="presentation" modalPresentationStyle="fullScreen" id="ioK-z2-a1q"/>
+                                            <segue destination="FsG-cX-Coc" kind="presentation" modalPresentationStyle="fullScreen" id="1AD-Kw-UFE"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="1GQ-H6-dvu"/>
+                                    <constraint firstAttribute="height" constant="30" id="1GQ-H6-dvu"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-uQ-5n9">
-                                <rect key="frame" x="30" y="174" width="354" height="539"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-uQ-5n9">
+                                <rect key="frame" x="30" y="174" width="354" height="589"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-Hq-jcp">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="159.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="RMr-Sx-KyD"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Police">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="경찰" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="btnCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="BuS-PN-NTn"/>
+                                            <action selector="btnCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="xA4-S2-w5W"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yih-fy-Nij">
-                                        <rect key="frame" x="0.0" y="189.5" width="354" height="160"/>
+                                        <rect key="frame" x="0.0" y="190.5" width="354" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="gEO-fh-rbA"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Hospital">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="병원" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="btnCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="sle-9o-m9I"/>
+                                            <action selector="btnCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="65e-Uj-PZG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atm-OE-4uX">
-                                        <rect key="frame" x="0.0" y="379.5" width="354" height="159.5"/>
+                                        <rect key="frame" x="0.0" y="381.5" width="354" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="dNp-Ru-74S"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Ambassy">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="대사/영사관" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="btnCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="L84-Z3-Jj8"/>
+                                            <action selector="btnCallTapped:" destination="0y3-On-H0g" eventType="touchUpInside" id="L8X-O8-Xep"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버튼 터치 후 다이얼 화면으로 이동합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I2-V3-fSR">
+                                        <rect key="frame" x="0.0" y="572" width="354" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -102,24 +116,27 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Uzj-xZ-m7L" firstAttribute="trailing" secondItem="Tzp-Rv-Ame" secondAttribute="trailing" constant="20" id="5oZ-z1-mnI"/>
-                            <constraint firstItem="0fa-uQ-5n9" firstAttribute="top" secondItem="Tzp-Rv-Ame" secondAttribute="bottom" constant="30" id="Jzb-Wz-Chg"/>
-                            <constraint firstItem="Uzj-xZ-m7L" firstAttribute="bottom" secondItem="0fa-uQ-5n9" secondAttribute="bottom" constant="100" id="MfD-9t-drV"/>
+                            <constraint firstItem="0fa-uQ-5n9" firstAttribute="top" secondItem="Tzp-Rv-Ame" secondAttribute="bottom" constant="70" id="Jzb-Wz-Chg"/>
+                            <constraint firstItem="Uzj-xZ-m7L" firstAttribute="bottom" secondItem="0fa-uQ-5n9" secondAttribute="bottom" constant="50" id="MOf-EK-3rv"/>
                             <constraint firstItem="Tzp-Rv-Ame" firstAttribute="leading" secondItem="Uzj-xZ-m7L" secondAttribute="leading" constant="20" id="dr6-Lr-s0c"/>
                             <constraint firstItem="0fa-uQ-5n9" firstAttribute="leading" secondItem="Uzj-xZ-m7L" secondAttribute="leading" constant="30" id="pOZ-fN-73L"/>
                             <constraint firstItem="Uzj-xZ-m7L" firstAttribute="trailing" secondItem="0fa-uQ-5n9" secondAttribute="trailing" constant="30" id="qK5-9z-jnz"/>
                             <constraint firstItem="Tzp-Rv-Ame" firstAttribute="top" secondItem="Uzj-xZ-m7L" secondAttribute="top" constant="30" id="yQ8-Cj-Qd0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" image="helm" catalog="system" id="HFe-uL-dKC"/>
+                    <tabBarItem key="tabBarItem" title="긴급전화" image="emergency.fill" id="HFe-uL-dKC"/>
                     <connections>
-                        <outlet property="lblCurrentNation" destination="XC6-Lz-ntx" id="aZR-jb-czo"/>
+                        <outlet property="btnCallAmbassy" destination="atm-OE-4uX" id="1v9-Dh-QGO"/>
+                        <outlet property="btnCallHospital" destination="yih-fy-Nij" id="QFW-xA-9we"/>
+                        <outlet property="btnCallPolice" destination="bJr-Hq-jcp" id="z1l-dP-xo0"/>
+                        <outlet property="btnCurrentNation" destination="zkE-Yr-BQd" id="i0B-yD-TYa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83B-KQ-0Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-368.11594202898556" y="861.83035714285711"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="rkO-E7-rwY">
             <objects>
                 <viewController id="Ph6-vV-BLg" customClass="HomeViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sXq-p9-X3f">
-                                <rect key="frame" x="20" y="293.5" width="374" height="68"/>
+                                <rect key="frame" x="20" y="294" width="374" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누구누구 님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHg-0D-pnA">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -144,29 +161,35 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="w3A-g1-Abc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="w3A-g1-Abc">
                                 <rect key="frame" x="167" y="74" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="OTc-GC-7TW"/>
                                     <constraint firstAttribute="width" constant="80" id="h1a-bu-B8r"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erj-hA-I56">
-                                <rect key="frame" x="20" y="391" width="374" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erj-hA-I56">
+                                <rect key="frame" x="20" y="391.5" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="g7c-nY-aBq"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title=" ">
+                                <buttonConfiguration key="configuration" style="filled" imagePadding="0.0">
+                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                     <backgroundConfiguration key="background" strokeWidth="3" strokeOutset="3">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="strokeColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
-                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="10"/>
+                                    <color key="baseForegroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="FsG-cX-Coc" kind="presentation" modalPresentationStyle="fullScreen" id="FzK-MO-Y1L"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한민국" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-p8-KdZ">
-                                <rect key="frame" x="20" y="572" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="571.5" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -197,7 +220,7 @@
                             <constraint firstItem="NW2-p8-KdZ" firstAttribute="top" secondItem="Erj-hA-I56" secondAttribute="bottom" constant="150" id="wRe-D7-W1l"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="SGm-ae-NT8"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home" id="SGm-ae-NT8"/>
                     <connections>
                         <outlet property="lblCurrentCountry" destination="NW2-p8-KdZ" id="cx7-fI-rVX"/>
                     </connections>
@@ -213,9 +236,11 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hnS-jV-QLo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.058823529411764705" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <tabBarAppearance key="standardAppearance"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="selectionIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="Ph6-vV-BLg" kind="relationship" relationship="viewControllers" id="7qk-KG-VRd"/>
@@ -227,7 +252,7 @@
             </objects>
             <point key="canvasLocation" x="-368" y="64"/>
         </scene>
-        <!--Map-->
+        <!--지도-->
         <scene sceneID="4hE-JX-6uH">
             <objects>
                 <viewController id="Q9q-fJ-FdQ" customClass="MapViewController" customModule="HELP" customModuleProvider="target" sceneMemberID="viewController">
@@ -257,7 +282,7 @@
                                                 <rect key="frame" x="8" y="0.0" width="92.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="경찰서">
-                                                    <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="btnPointTapped:" destination="Q9q-fJ-FdQ" eventType="touchUpInside" id="2oc-rI-3y1"/>
@@ -267,7 +292,7 @@
                                                 <rect key="frame" x="140.5" y="0.0" width="93" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="병원">
-                                                    <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="btnPointTapped:" destination="Q9q-fJ-FdQ" eventType="touchUpInside" id="DG3-pM-HnK"/>
@@ -277,7 +302,7 @@
                                                 <rect key="frame" x="273.5" y="0.0" width="92.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="대사관">
-                                                    <color key="baseBackgroundColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
@@ -318,7 +343,7 @@
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" id="vQ6-Re-gtV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="b1Y-6h-iYd"/>
+                    <tabBarItem key="tabBarItem" title="지도" image="map" id="b1Y-6h-iYd"/>
                     <connections>
                         <outlet property="mapView" destination="tQs-aL-EDm" id="gqA-Z2-0Ct"/>
                         <outlet property="searchBar" destination="TZW-nR-jeF" id="Nqo-Fv-N5k"/>
@@ -520,15 +545,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FzK-MO-Y1L"/>
+        <segue reference="1AD-Kw-UFE"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Logo.png" width="80" height="72"/>
+        <image name="Frame.png" width="63.333332061767578" height="51.666667938232422"/>
         <image name="ai.png" width="640" height="320"/>
-        <image name="helm" catalog="system" width="128" height="122"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="emergency.fill" width="14.333333015441895" height="18.333333969116211"/>
+        <image name="home" width="14" height="18.333333969116211"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" width="14.666666984558105" height="18.333333969116211"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="place.png" width="36" height="43"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
