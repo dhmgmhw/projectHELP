@@ -124,7 +124,7 @@
                             <constraint firstItem="Tzp-Rv-Ame" firstAttribute="top" secondItem="Uzj-xZ-m7L" secondAttribute="top" constant="30" id="yQ8-Cj-Qd0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="긴급전화" image="emergency.fill" id="HFe-uL-dKC"/>
+                    <tabBarItem key="tabBarItem" title="긴급전화" image="main.png" selectedImage="main.fill.png" id="HFe-uL-dKC"/>
                     <connections>
                         <outlet property="btnCallAmbassy" destination="atm-OE-4uX" id="1v9-Dh-QGO"/>
                         <outlet property="btnCallHospital" destination="yih-fy-Nij" id="QFW-xA-9we"/>
@@ -220,7 +220,7 @@
                             <constraint firstItem="NW2-p8-KdZ" firstAttribute="top" secondItem="Erj-hA-I56" secondAttribute="bottom" constant="150" id="wRe-D7-W1l"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="home" id="SGm-ae-NT8"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home.png" selectedImage="home.fill.png" id="SGm-ae-NT8"/>
                     <connections>
                         <outlet property="lblCurrentCountry" destination="NW2-p8-KdZ" id="cx7-fI-rVX"/>
                     </connections>
@@ -237,8 +237,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="selectionIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tabBarAppearance>
                     </tabBar>
@@ -343,7 +346,7 @@
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" id="vQ6-Re-gtV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="지도" image="map" id="b1Y-6h-iYd"/>
+                    <tabBarItem key="tabBarItem" title="지도" image="map.png" selectedImage="map.fill.png" id="b1Y-6h-iYd"/>
                     <connections>
                         <outlet property="mapView" destination="tQs-aL-EDm" id="gqA-Z2-0Ct"/>
                         <outlet property="searchBar" destination="TZW-nR-jeF" id="Nqo-Fv-N5k"/>
@@ -545,15 +548,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FzK-MO-Y1L"/>
+        <segue reference="1AD-Kw-UFE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Frame.png" width="63.333332061767578" height="51.666667938232422"/>
         <image name="ai.png" width="640" height="320"/>
-        <image name="emergency.fill" width="14.333333015441895" height="18.333333969116211"/>
-        <image name="home" width="14" height="18.333333969116211"/>
+        <image name="home.fill.png" width="14" height="18"/>
+        <image name="home.png" width="14" height="18"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="map" width="14.666666984558105" height="18.333333969116211"/>
+        <image name="main.fill.png" width="14" height="18"/>
+        <image name="main.png" width="14" height="18"/>
+        <image name="map.fill.png" width="16" height="18"/>
+        <image name="map.png" width="16" height="18"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="place.png" width="36" height="43"/>
         <systemColor name="systemBackgroundColor">
