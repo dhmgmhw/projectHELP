@@ -221,7 +221,7 @@ extension MapViewController: MKMapViewDelegate {
                 destinationDistance = "\(String( ceil(distance) / 1000 )) Km"
             } else {
                 lblDistance.text = "\(String( ceil(distance) )) m"
-                destinationDistance = "\(String( ceil(distance) / 1000 )) Km"
+                destinationDistance = "\(String( ceil(distance) )) m"
             }
         } else {
             lblDistance.text = "현재 내 위치를 찾을 수 없습니다."

@@ -24,7 +24,6 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         lblDestinationName.text = destinationName
         lblDestinationDistance.text = destinationDistance
-        
         guard let startingPoint = startingPoint else { return }
         guard let destination = destination else { return }
         let loc1 = CLLocationCoordinate2D.init(latitude: startingPoint.coordinate.latitude, longitude: startingPoint.coordinate.longitude)
