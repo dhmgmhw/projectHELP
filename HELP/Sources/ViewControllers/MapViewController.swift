@@ -18,12 +18,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var lblPlaceName: UILabel!
     @IBOutlet weak var lblDistance: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
-    
-//    var foundPlace: String?
-    
+        
     var locationManager = CLLocationManager()
+
+    // passing data
     var currentLocation: CLLocation!
-    
+    var selectedAnnotation: MKAnnotation?
+    var destinationName: String = ""
+    var destinationDistance: String = ""
     
     override func viewDidLoad() {
         searchBar.delegate = self
@@ -105,7 +107,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
                 return
             }
             
-            // 어노테이션 제거 함수 call
+            // 어노테이션 초기화 함수 call
             self.removeAllAnnotations()
             
             for item in response.mapItems {
@@ -159,6 +161,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
+    // Find route!
+    @IBAction func btnSearchRouteTapped(_ sender: UIButton) {
+        if let routeData = currentLocation {
+            print("here")
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "RouteViewController") as? RouteViewController else { return }
+            vc.startingPoint = routeData
+            vc.destination = selectedAnnotation
+            vc.destinationDistance = self.destinationDistance
+            vc.destinationName = self.destinationName
+            self.present(vc, animated: true)
+        } else {
+            let alert = UIAlertController(title: "오류", message: "경로를 탐색할 수 없습니다. GPS를 확인해주세요.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
     // return to my location
     @IBAction func btnUpdateCurrentRegionTapped(_ sender: UIButton) {
         self.mapView.showsUserLocation = true
@@ -192,12 +211,20 @@ extension MapViewController: MKMapViewDelegate {
         var foundLocation: CLLocation {
             .init(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         }
+        selectedAnnotation = annotation
         lblPlaceName.text = name[0]
+        destinationName = name[0]
         lblAddress.text = name[1]
         if let distance = currentLocation?.distance(from: foundLocation) {
-            lblDistance.text = "\(String( ceil(distance) / 1000 )) Km"
+            if distance > 1000 {
+                lblDistance.text = "\(String( ceil(distance) / 1000 )) Km"
+                destinationDistance = "\(String( ceil(distance) / 1000 )) Km"
+            } else {
+                lblDistance.text = "\(String( ceil(distance) )) m"
+                destinationDistance = "\(String( ceil(distance) / 1000 )) Km"
+            }
         } else {
-            lblDistance.text = "현재 내 위치를 알 수 없습니다."
+            lblDistance.text = "현재 내 위치를 찾을 수 없습니다."
         }
     }
 }
