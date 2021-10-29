@@ -30,7 +30,7 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="0.0" green="0.058823529409999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="해업!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-Ny-qXU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해업!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkW-Ny-qXU">
                                 <rect key="frame" x="180" y="398" width="54" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,6 +43,7 @@
                             <constraint firstItem="JUz-RH-iCM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="Duo-lQ-gtC"/>
                             <constraint firstItem="JUz-RH-iCM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GF8-XM-jMX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qJV-2l-I3m" secondAttribute="bottom" constant="45" id="Uif-lq-71R"/>
+                            <constraint firstItem="bkW-Ny-qXU" firstAttribute="top" secondItem="JUz-RH-iCM" secondAttribute="bottom" constant="-50" id="Y70-1h-AE4"/>
                             <constraint firstItem="bkW-Ny-qXU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eLr-FU-Hvy"/>
                             <constraint firstItem="qJV-2l-I3m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uhx-U1-mOz"/>
                         </constraints>
