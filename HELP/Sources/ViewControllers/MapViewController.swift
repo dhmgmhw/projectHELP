@@ -29,7 +29,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         searchBar.delegate = self
         mapView.delegate = self
         showMap()
+        floatingPanelSetter()
+    }
+    
+    private func floatingPanelSetter() {
         floatingView.isHidden = true
+        // make floating panel shadow
+        floatingView.layer.shadowColor = UIColor.black.cgColor
+        floatingView.layer.masksToBounds = false
+        floatingView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        floatingView.layer.shadowRadius = 5
+        floatingView.layer.shadowOpacity = 0.7
+        
+        // make floating panel top radius
+        floatingView.layer.cornerRadius = 10
+        floatingView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     private func showMap() {
@@ -150,6 +164,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         self.mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(.follow, animated: true)
     }
+    
+    @IBAction func btnFloatingPanelClose(_ sender: UIButton) {
+        floatingView.isHidden = true
+    }
 }
 
 extension MapViewController: UISearchBarDelegate {
@@ -167,20 +185,19 @@ extension MapViewController: UISearchBarDelegate {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation else { return }
-//        print(annotation.coordinate.latitude)
-//        print(annotation.coordinate.longitude)
         guard let chaining = annotation.subtitle else { return }
         guard let subtitle = chaining else { return }
         floatingView.isHidden = false
         let name = subtitle.components(separatedBy: ",")
-        
         var foundLocation: CLLocation {
             .init(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
         }
-        
         lblPlaceName.text = name[0]
         lblAddress.text = name[1]
-        guard let distance = currentLocation?.distance(from: foundLocation) else { return }
-        lblDistance.text = "\(String( ceil(distance) / 1000 )) Km"
+        if let distance = currentLocation?.distance(from: foundLocation) {
+            lblDistance.text = "\(String( ceil(distance) / 1000 )) Km"
+        } else {
+            lblDistance.text = "현재 내 위치를 알 수 없습니다."
+        }
     }
 }

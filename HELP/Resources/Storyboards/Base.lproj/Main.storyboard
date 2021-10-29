@@ -255,7 +255,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-KJ-egC">
-                                <rect key="frame" x="20" y="74" width="374" height="97"/>
+                                <rect key="frame" x="20" y="74" width="374" height="93.5"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZW-nR-jeF">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
@@ -267,12 +267,13 @@
                                         </scopeButtonTitles>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="67P-gJ-dar">
-                                        <rect key="frame" x="0.0" y="66" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="66" width="374" height="27.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-SY-ux3">
-                                                <rect key="frame" x="8" y="0.0" width="92.5" height="31"/>
+                                                <rect key="frame" x="8" y="0.0" width="92.5" height="27.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="경찰서">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                                     <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -280,9 +281,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="391-qT-NTV">
-                                                <rect key="frame" x="140.5" y="0.0" width="93" height="31"/>
+                                                <rect key="frame" x="140.5" y="0.0" width="93" height="27.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="병원">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                                     <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -290,9 +292,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-Kq-rCG">
-                                                <rect key="frame" x="273.5" y="0.0" width="92.5" height="31"/>
+                                                <rect key="frame" x="273.5" y="0.0" width="92.5" height="27.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="대사관">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
                                                     <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -320,26 +323,42 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-bI-biF">
-                                <rect key="frame" x="20" y="663" width="374" height="150"/>
+                                <rect key="frame" x="20" y="693" width="374" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pb3-gd-ZLU">
-                                        <rect key="frame" x="20" y="10" width="334" height="130"/>
+                                        <rect key="frame" x="20" y="10" width="334" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미지정 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-uG-VP1">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="45.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-la-10O">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미지정 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-uG-VP1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xc-uO-AJ4">
+                                                        <rect key="frame" x="292.5" y="0.0" width="41.5" height="30"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                        <connections>
+                                                            <action selector="btnFloatingPanelClose:" destination="Q9q-fJ-FdQ" eventType="touchUpInside" id="yG6-Bd-Cb4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="pob-Yq-UAe"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTs-wd-a5P">
+                                                <rect key="frame" x="0.0" y="30" width="334" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTs-wd-a5P">
-                                                <rect key="frame" x="0.0" y="45.5" width="334" height="52"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 불러 올 수 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKZ-Uc-jAO">
-                                                <rect key="frame" x="0.0" y="97.5" width="334" height="32.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 불러 올 수 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKZ-Uc-jAO">
+                                                <rect key="frame" x="0.0" y="58" width="334" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -349,7 +368,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="pb3-gd-ZLU" firstAttribute="top" secondItem="xIB-bI-biF" secondAttribute="top" constant="10" id="ILV-5g-KHL"/>
-                                    <constraint firstAttribute="height" constant="150" id="OfM-BU-hx9"/>
+                                    <constraint firstAttribute="height" constant="120" id="OfM-BU-hx9"/>
                                     <constraint firstAttribute="trailing" secondItem="pb3-gd-ZLU" secondAttribute="trailing" constant="20" id="Pgp-bR-SvN"/>
                                     <constraint firstItem="pb3-gd-ZLU" firstAttribute="leading" secondItem="xIB-bI-biF" secondAttribute="leading" constant="20" id="bLa-QM-Tfi"/>
                                     <constraint firstAttribute="bottom" secondItem="pb3-gd-ZLU" secondAttribute="bottom" id="j1u-qD-Ajd"/>
