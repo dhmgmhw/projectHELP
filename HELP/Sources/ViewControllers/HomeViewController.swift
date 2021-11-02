@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func btnConnectionTestTapped(_ sender: UIButton) {
-//        getTest()
+        getTest()
     }
     
     @IBAction func btnPostTestTapped(_ sender: UIButton) {
