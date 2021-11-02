@@ -19,19 +19,25 @@ class HomeViewController: UIViewController {
     }
     
     func getTest() {
-            let url = "http://15.165.137.195:8090/HelpAPI-0.0.1-SNAPSHOT/nation/?secretKey=sixballs-cop"
-            AF.request(url,
-                       method: .get,
-                       parameters: nil,
-                       encoding: URLEncoding.default,
-                       headers: ["Content-Type":"application/json", "Accept":"application/json"])
-                .validate(statusCode: 200..<300)
-                .responseJSON { (json) in
-                    print(json)
+        let url = "http://15.165.137.195:8090/HelpAPI-0.0.3/nation/?secretKey=sixballs-cop&nationCode=AU"
+        
+        AF.request(url, method: .get).responseJSON { response in
+            switch (response.result) {
+                // 성공/실패 구분
+            case .success:
+                // response의 data를 [Nation]로 변환
+                print(response)
+            case .failure(let error):
+                print("에러코드: \(error._code)")
+                print("에러사유: \(error.errorDescription!)")
             }
-        }
+        }.resume()
+        
+    }
     
     @IBAction func btnConnectionTestTapped(_ sender: UIButton) {
         getTest()
     }
 }
+
+
