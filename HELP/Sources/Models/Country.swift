@@ -12,13 +12,8 @@ struct Country: Codable {
     let name: String
 }
 
-struct Nation: Codable {
-    let nationCode: String
-    let nationName: String
-    let policeCall: String
-    let fireCall: String
-    let embassyCall: String
-    let embassyLoc: String
+struct NationElement: Codable {
+    let nationCode, nationName, policeCall, fireCall, embassyCall, embassyLoc: String
     
     enum CodingKeys: String, CodingKey {
         case nationCode = "nation_code"
@@ -30,8 +25,7 @@ struct Nation: Codable {
     }
 }
 
-
-
+typealias Nation = [NationElement]
 
 public var countries = [
     ["nationalCode":"KR", "name":"대한민국"],

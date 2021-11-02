@@ -15,8 +15,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     let searchController = UISearchController()
     let list = countries
     
-    var listData: [Nation] = []
-    var filteredList: [Nation] = []
+    var listData: Nation = []
+    var filteredList: Nation = []
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
         let isActive = searchController?.isActive ?? false
@@ -54,14 +54,14 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         // AF.request().responseJSON으로 호출하면 JSON형식의 response를 받는다.
         AF.request(url, method: .get).responseJSON { response in
             // response의 데이터를 받을 [Nation] 타입의 리스트 변수
-            var countries: [Nation]
+            var countries: Nation
             do {
                 let decoder = JSONDecoder()
                 switch (response.result) {
                 // 성공/실패 구분
                 case .success:
                     // response의 data를 [Nation]로 변환
-                    countries = try decoder.decode([Nation].self, from: response.data!)
+                    countries = try decoder.decode(Nation.self, from: response.data!)
                     self.listData = countries
                     // reload Data!
                     DispatchQueue.main.async {
