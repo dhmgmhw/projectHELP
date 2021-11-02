@@ -386,7 +386,6 @@
                                     <constraint firstAttribute="height" constant="140" id="OfM-BU-hx9"/>
                                     <constraint firstAttribute="trailing" secondItem="pb3-gd-ZLU" secondAttribute="trailing" constant="20" id="Pgp-bR-SvN"/>
                                     <constraint firstItem="pb3-gd-ZLU" firstAttribute="leading" secondItem="xIB-bI-biF" secondAttribute="leading" constant="20" id="bLa-QM-Tfi"/>
-                                    <constraint firstAttribute="bottom" secondItem="pb3-gd-ZLU" secondAttribute="bottom" id="j1u-qD-Ajd"/>
                                     <constraint firstAttribute="bottom" secondItem="pb3-gd-ZLU" secondAttribute="bottom" constant="10" id="zA8-Ed-j8G"/>
                                 </constraints>
                             </view>
