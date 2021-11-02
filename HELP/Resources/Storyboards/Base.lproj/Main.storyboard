@@ -188,55 +188,21 @@
                                     <segue destination="FsG-cX-Coc" kind="presentation" modalPresentationStyle="fullScreen" id="FzK-MO-Y1L"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfu-BD-TmQ">
-                                <rect key="frame" x="100" y="481" width="214" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="btnConnectionTestTapped:" destination="Ph6-vV-BLg" eventType="touchUpInside" id="Sht-Zi-hC8"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Test Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dfD-Qo-ZdY">
-                                <rect key="frame" x="20" y="562" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="country-name"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w9-iJ-Jyq">
-                                <rect key="frame" x="100" y="655" width="214" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="btnConnectionTestTapped:" destination="Ph6-vV-BLg" eventType="touchUpInside" id="jj8-ZU-0Bg"/>
-                                    <action selector="btnPostTestTapped:" destination="Ph6-vV-BLg" eventType="touchUpInside" id="Dta-5g-NPZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a7I-DS-VYk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="w3A-g1-Abc" firstAttribute="centerX" secondItem="FKR-qS-2KK" secondAttribute="centerX" id="0oH-75-vo3"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="centerY" secondItem="FKR-qS-2KK" secondAttribute="centerY" id="5BU-Ps-odU"/>
-                            <constraint firstItem="dfD-Qo-ZdY" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="7NH-Ch-ua2"/>
                             <constraint firstItem="sXq-p9-X3f" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="8n0-iO-PY3"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="top" secondItem="sXq-p9-X3f" secondAttribute="bottom" constant="29.5" id="AIn-Uf-TjU"/>
-                            <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="Mfu-BD-TmQ" secondAttribute="trailing" constant="100" id="CiP-Ur-aSS"/>
-                            <constraint firstItem="dfD-Qo-ZdY" firstAttribute="top" secondItem="Mfu-BD-TmQ" secondAttribute="bottom" constant="50" id="LqE-su-ZPV"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="O3M-1Y-cxC"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="Erj-hA-I56" secondAttribute="trailing" constant="20" id="Rq0-pK-3sw"/>
-                            <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="dfD-Qo-ZdY" secondAttribute="trailing" constant="20" id="Zzf-Os-tpF"/>
-                            <constraint firstItem="4w9-iJ-Jyq" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="100" id="aPG-Ut-sPD"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="sXq-p9-X3f" secondAttribute="trailing" constant="20" id="dxF-IZ-4eH"/>
-                            <constraint firstItem="Mfu-BD-TmQ" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="100" id="fKY-IJ-5rl"/>
                             <constraint firstItem="w3A-g1-Abc" firstAttribute="top" secondItem="a7I-DS-VYk" secondAttribute="top" constant="30" id="g9Q-1G-vLn"/>
-                            <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="4w9-iJ-Jyq" secondAttribute="trailing" constant="100" id="gK2-bI-pGf"/>
-                            <constraint firstItem="4w9-iJ-Jyq" firstAttribute="top" secondItem="dfD-Qo-ZdY" secondAttribute="bottom" constant="59" id="lGl-gq-GdQ"/>
-                            <constraint firstItem="Mfu-BD-TmQ" firstAttribute="top" secondItem="Erj-hA-I56" secondAttribute="bottom" constant="59.5" id="psC-pE-KFl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="home.png" selectedImage="home.fill.png" id="SGm-ae-NT8"/>
-                    <connections>
-                        <outlet property="textInput" destination="dfD-Qo-ZdY" id="Yof-ds-Ntt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YQ-w3-DSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
