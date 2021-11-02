@@ -10,7 +10,6 @@ import Alamofire
 
 class SearchViewController: UIViewController, UISearchResultsUpdating {
 
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tvCountries: UITableView!
     let searchController = UISearchController()
     let list = countries
@@ -34,7 +33,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
     
-        loadingIndicator.startAnimating()
         getList()
     }
     
@@ -77,9 +75,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
             } catch let parsingError {
                 print("에러:", parsingError)
             }
-        }.resume()
-        loadingIndicator.stopAnimating()
-        loadingIndicator.hidesWhenStopped = true
+        }
     }
 }
 
