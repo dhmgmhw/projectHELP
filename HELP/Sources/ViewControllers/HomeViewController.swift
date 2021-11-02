@@ -47,6 +47,7 @@ class HomeViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "알았어요", style: .default, handler: nil))
             self.present(alert, animated: true)
         } else {
+            LoadingIndicator.showLoading()
             guard let text = textInput.text else { return }
             let url = "\(API.MockURL)/countries"
             let param = NationElement(nationCode: "KR", nationName: "\(text)", policeCall: "123124", fireCall: "124123", embassyCall: "1245123", embassyLoc: "종로구 우미관")
@@ -56,10 +57,12 @@ class HomeViewController: UIViewController {
                        encoder: JSONParameterEncoder.default).response { response in
                 switch (response.result) {
                 case .success:
+                    LoadingIndicator.hideLoading()
                     let alert = UIAlertController(title: "등록완료", message: "정상적으로 등록되었습니다.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "알았어요", style: .default, handler: nil))
                     self.present(alert, animated: true)
                 case .failure(let error):
+                    LoadingIndicator.hideLoading()
                     let alert = UIAlertController(title: "에러코드: \(error._code)", message: "에러사유: \(error.errorDescription!)", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "알았어요", style: .default, handler: nil))
                     self.present(alert, animated: true)

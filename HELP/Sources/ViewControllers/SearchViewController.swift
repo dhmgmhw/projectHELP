@@ -48,6 +48,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     
     
     func getList() {
+        LoadingIndicator.showLoading()
         let url = "https://6155639c93e3550017b08978.mockapi.io/countries"
         // AF.request().responseJSON으로 호출하면 JSON형식의 response를 받는다.
         AF.request(url, method: .get).responseJSON { response in
@@ -65,7 +66,9 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                     DispatchQueue.main.async {
                         self.tvCountries.reloadData()
                     }
+                    LoadingIndicator.hideLoading()
                 case .failure(let error):
+                    LoadingIndicator.hideLoading()
                     print("에러코드: \(error._code)")
                     print("에러사유: \(error.errorDescription!)")
                     let alert = UIAlertController(title: "오류", message: "서버와의 연결이 불안정합니다. 네트워크 환경에서 다시 시도해주세요.", preferredStyle: .alert)
