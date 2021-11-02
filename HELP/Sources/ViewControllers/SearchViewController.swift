@@ -77,7 +77,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
             } catch let parsingError {
                 print("에러:", parsingError)
             }
-        }.resume()
+        }
         loadingIndicator.stopAnimating()
         loadingIndicator.hidesWhenStopped = true
     }
