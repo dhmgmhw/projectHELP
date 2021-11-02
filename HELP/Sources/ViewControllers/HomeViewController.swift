@@ -20,9 +20,7 @@ class HomeViewController: UIViewController {
     }
     
     func getTest() {
-        let url = "http://15.165.137.195:8090/HelpAPI-0.0.3/nation/?secretKey=sixballs-cop&nationCode=AU"
-        
-        AF.request(url, method: .get).responseJSON { response in
+        AF.request(API.TestURL, method: .get).responseJSON { response in
             switch (response.result) {
                 // 성공/실패 구분
             case .success:
