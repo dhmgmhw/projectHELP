@@ -246,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-KJ-egC">
-                                <rect key="frame" x="20" y="74" width="374" height="93.5"/>
+                                <rect key="frame" x="20" y="74" width="374" height="92"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZW-nR-jeF">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="51"/>
@@ -258,13 +258,13 @@
                                         </scopeButtonTitles>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="67P-gJ-dar">
-                                        <rect key="frame" x="0.0" y="66" width="374" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="66" width="374" height="26"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-SY-ux3">
-                                                <rect key="frame" x="8" y="0.0" width="92.5" height="27.5"/>
+                                                <rect key="frame" x="8" y="0.0" width="92.5" height="26"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="경찰서">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                                     <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -272,10 +272,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="391-qT-NTV">
-                                                <rect key="frame" x="140.5" y="0.0" width="93" height="27.5"/>
+                                                <rect key="frame" x="140.5" y="0.0" width="93" height="26"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="병원">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                                     <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -283,10 +283,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-Kq-rCG">
-                                                <rect key="frame" x="273.5" y="0.0" width="92.5" height="27.5"/>
+                                                <rect key="frame" x="273.5" y="0.0" width="92.5" height="26"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="대사관">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                                     <color key="baseBackgroundColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -323,20 +323,12 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미지정 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-uG-VP1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xc-uO-AJ4">
-                                                        <rect key="frame" x="312.5" y="0.0" width="41.5" height="30"/>
-                                                        <color key="tintColor" red="0.042047224940000003" green="0.1082508937" blue="0.62436139580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <buttonConfiguration key="configuration" style="plain"/>
-                                                        <connections>
-                                                            <action selector="btnFloatingPanelClose:" destination="Q9q-fJ-FdQ" eventType="touchUpInside" id="yG6-Bd-Cb4"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pob-Yq-UAe"/>

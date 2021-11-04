@@ -184,9 +184,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         self.mapView.setUserTrackingMode(.follow, animated: true)
     }
     
-    @IBAction func btnFloatingPanelClose(_ sender: UIButton) {
-        floatingView.isHidden = true
-    }
 }
 
 extension MapViewController: UISearchBarDelegate {
