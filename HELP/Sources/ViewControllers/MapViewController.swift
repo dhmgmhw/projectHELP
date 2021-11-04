@@ -150,8 +150,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     // keyboard dismiss
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
+        // 다른곳을 선택할 경우 floating 제거
+        if floatingView.isHidden == false {
+            floatingView.isHidden = true
+        }
     }
-    
     
     @IBAction func btnPointTapped(_ sender: UIButton) {
         if sender.currentTitle == "경찰서" {
@@ -164,7 +168,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     // Find route!
     @IBAction func btnSearchRouteTapped(_ sender: UIButton) {
         if let routeData = currentLocation {
-            print("here")
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "RouteViewController") as? RouteViewController else { return }
             vc.startingPoint = routeData
             vc.destination = selectedAnnotation
@@ -196,7 +199,6 @@ extension MapViewController: UISearchBarDelegate {
         self.searchBar.endEditing(true)
     }
 }
-
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
