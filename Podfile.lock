@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.4.4)
+  - FloatingPanel (2.5.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - FloatingPanel
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FloatingPanel
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  FloatingPanel: ddb1c8cbbacd164cfee651c449febe867a28e2cb
+
+PODFILE CHECKSUM: 1b1e2b3204bdc0530f234002b9633cb4b91cc76e
+
+COCOAPODS: 1.11.2
