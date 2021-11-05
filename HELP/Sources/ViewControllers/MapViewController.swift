@@ -1,3 +1,4 @@
+
 //
 //  MapViewController.swift
 //  HELP
@@ -150,6 +151,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     // keyboard dismiss
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        if floatingView.isHidden == false {
+            floatingView.isHidden = true
+        }
     }
     
     
@@ -182,12 +186,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         self.mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(.follow, animated: true)
     }
-    
-    @IBAction func btnFloatingPanelClose(_ sender: UIButton) {
-        floatingView.isHidden = true
-    }
 }
-
+    
 extension MapViewController: UISearchBarDelegate {
     // searchBar 검색버튼 눌렀을때
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
