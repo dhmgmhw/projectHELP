@@ -25,7 +25,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     var currentLocation: CLLocation!
     var selectedAnnotation: MKAnnotation?
     var destinationName: String = ""
-    var destinationDistance: String = ""
+    var destinationDistance: Double = 0
     
     override func viewDidLoad() {
         searchBar.delegate = self
@@ -164,7 +164,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
     // Find route!
     @IBAction func btnSearchRouteTapped(_ sender: UIButton) {
         if let routeData = currentLocation {
-            print("here")
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "RouteViewController") as? RouteViewController else { return }
             vc.startingPoint = routeData
             vc.destination = selectedAnnotation
@@ -217,11 +216,11 @@ extension MapViewController: MKMapViewDelegate {
         lblAddress.text = name[1]
         if let distance = currentLocation?.distance(from: foundLocation) {
             if distance > 1000 {
-                lblDistance.text = "\(String( ceil(distance) / 1000 )) Km"
-                destinationDistance = "\(String( ceil(distance) / 1000 )) Km"
+                lblDistance.text = "\(String( Int( ceil(distance) / 1000 ) ) ) Km"
+                destinationDistance = ceil(distance)
             } else {
-                lblDistance.text = "\(String( ceil(distance) )) m"
-                destinationDistance = "\(String( ceil(distance) )) m"
+                lblDistance.text = "\(String( Int( ceil(distance) ) ) ) m"
+                destinationDistance = ceil(distance)
             }
         } else {
             lblDistance.text = "현재 내 위치를 찾을 수 없습니다."
