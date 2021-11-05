@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ytt-H0-PZp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -123,7 +124,7 @@
                             <constraint firstItem="Tzp-Rv-Ame" firstAttribute="top" secondItem="Uzj-xZ-m7L" secondAttribute="top" constant="30" id="yQ8-Cj-Qd0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="긴급전화" image="main.png" selectedImage="main.fill.png" id="HFe-uL-dKC"/>
+                    <tabBarItem key="tabBarItem" title="긴급전화" image="phone" catalog="system" selectedImage="phone.fill" id="HFe-uL-dKC"/>
                     <connections>
                         <outlet property="btnCallAmbassy" destination="atm-OE-4uX" id="1v9-Dh-QGO"/>
                         <outlet property="btnCallHospital" destination="yih-fy-Nij" id="QFW-xA-9we"/>
@@ -160,13 +161,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="w3A-g1-Abc">
-                                <rect key="frame" x="167" y="74" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="OTc-GC-7TW"/>
-                                    <constraint firstAttribute="width" constant="80" id="h1a-bu-B8r"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erj-hA-I56">
                                 <rect key="frame" x="20" y="391.5" width="374" height="30"/>
                                 <constraints>
@@ -213,7 +207,6 @@
                         <viewLayoutGuide key="safeArea" id="a7I-DS-VYk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="w3A-g1-Abc" firstAttribute="centerX" secondItem="FKR-qS-2KK" secondAttribute="centerX" id="0oH-75-vo3"/>
                             <constraint firstItem="Erj-hA-I56" firstAttribute="centerY" secondItem="FKR-qS-2KK" secondAttribute="centerY" id="5BU-Ps-odU"/>
                             <constraint firstItem="dfD-Qo-ZdY" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="7NH-Ch-ua2"/>
                             <constraint firstItem="sXq-p9-X3f" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="20" id="8n0-iO-PY3"/>
@@ -226,13 +219,12 @@
                             <constraint firstItem="4w9-iJ-Jyq" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="100" id="aPG-Ut-sPD"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="sXq-p9-X3f" secondAttribute="trailing" constant="20" id="dxF-IZ-4eH"/>
                             <constraint firstItem="Mfu-BD-TmQ" firstAttribute="leading" secondItem="a7I-DS-VYk" secondAttribute="leading" constant="100" id="fKY-IJ-5rl"/>
-                            <constraint firstItem="w3A-g1-Abc" firstAttribute="top" secondItem="a7I-DS-VYk" secondAttribute="top" constant="30" id="g9Q-1G-vLn"/>
                             <constraint firstItem="a7I-DS-VYk" firstAttribute="trailing" secondItem="4w9-iJ-Jyq" secondAttribute="trailing" constant="100" id="gK2-bI-pGf"/>
                             <constraint firstItem="4w9-iJ-Jyq" firstAttribute="top" secondItem="dfD-Qo-ZdY" secondAttribute="bottom" constant="59" id="lGl-gq-GdQ"/>
                             <constraint firstItem="Mfu-BD-TmQ" firstAttribute="top" secondItem="Erj-hA-I56" secondAttribute="bottom" constant="59.5" id="psC-pE-KFl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="home.png" selectedImage="home.fill.png" id="SGm-ae-NT8"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="SGm-ae-NT8"/>
                     <connections>
                         <outlet property="textInput" destination="dfD-Qo-ZdY" id="Yof-ds-Ntt"/>
                     </connections>
@@ -431,7 +423,7 @@
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" id="vQ6-Re-gtV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="지도" image="map.png" selectedImage="map.fill.png" id="b1Y-6h-iYd"/>
+                    <tabBarItem key="tabBarItem" title="지도" image="map" catalog="system" selectedImage="map.fill" id="b1Y-6h-iYd"/>
                     <connections>
                         <outlet property="floatingView" destination="xIB-bI-biF" id="hIP-nA-gwu"/>
                         <outlet property="lblAddress" destination="UKZ-Uc-jAO" id="OB5-PZ-wyu"/>
@@ -723,20 +715,19 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FzK-MO-Y1L"/>
+        <segue reference="1AD-Kw-UFE"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Frame.png" width="63.333332061767578" height="51.666667938232422"/>
         <image name="ai.png" width="640" height="320"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
-        <image name="home.fill.png" width="14" height="18"/>
-        <image name="home.png" width="14" height="18"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="main.fill.png" width="14" height="18"/>
-        <image name="main.png" width="14" height="18"/>
-        <image name="map.fill.png" width="16" height="18"/>
-        <image name="map.png" width="16" height="18"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="place.png" width="36" height="43"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
