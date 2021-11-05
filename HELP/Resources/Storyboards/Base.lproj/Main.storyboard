@@ -124,7 +124,7 @@
                             <constraint firstItem="Tzp-Rv-Ame" firstAttribute="top" secondItem="Uzj-xZ-m7L" secondAttribute="top" constant="30" id="yQ8-Cj-Qd0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="긴급전화" image="phone" catalog="system" selectedImage="phone.fill" id="HFe-uL-dKC"/>
+                    <tabBarItem key="tabBarItem" title="긴급전화" image="main" selectedImage="main.fill" id="HFe-uL-dKC"/>
                     <connections>
                         <outlet property="btnCallAmbassy" destination="atm-OE-4uX" id="1v9-Dh-QGO"/>
                         <outlet property="btnCallHospital" destination="yih-fy-Nij" id="QFW-xA-9we"/>
@@ -202,7 +202,7 @@
                             <constraint firstItem="ulK-a6-coE" firstAttribute="centerX" secondItem="FKR-qS-2KK" secondAttribute="centerX" id="fv6-bH-7uJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="SGm-ae-NT8"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home" selectedImage="home.fill" id="SGm-ae-NT8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YQ-w3-DSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,7 +390,7 @@
                             <constraint firstItem="tQs-aL-EDm" firstAttribute="top" secondItem="TuM-36-CPf" secondAttribute="top" id="vQ6-Re-gtV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="지도" image="map" catalog="system" selectedImage="map.fill" id="b1Y-6h-iYd"/>
+                    <tabBarItem key="tabBarItem" title="지도" image="map" selectedImage="map.fill" id="b1Y-6h-iYd"/>
                     <connections>
                         <outlet property="floatingView" destination="xIB-bI-biF" id="hIP-nA-gwu"/>
                         <outlet property="lblAddress" destination="UKZ-Uc-jAO" id="OB5-PZ-wyu"/>
@@ -742,21 +742,21 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FzK-MO-Y1L"/>
+        <segue reference="1AD-Kw-UFE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="155.66667175292969" height="154.66667175292969"/>
         <image name="ai.png" width="640" height="320"/>
         <image name="bicycle" catalog="system" width="128" height="78"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="home" width="14" height="18"/>
+        <image name="home.fill" width="14" height="18"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="map" catalog="system" width="128" height="110"/>
-        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="main" width="14" height="18"/>
+        <image name="main.fill" width="14" height="18"/>
+        <image name="map" width="16" height="18"/>
+        <image name="map.fill" width="16" height="18"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="phone" catalog="system" width="128" height="115"/>
-        <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="place.png" width="36" height="43"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
