@@ -110,6 +110,7 @@ extension SearchViewController: UITableViewDataSource {
             cell.lblCountry.text = "\(listData[indexPath.row].nationName)"
             cell.imgFlag.image = UIImage(named: "\(listData[indexPath.row].nationCode.lowercased()).png")
         }
+        cell.selectionStyle = .none
         return cell
     }
 }
