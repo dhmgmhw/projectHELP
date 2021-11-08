@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         tvCountries.dataSource = self
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
-    
+        searchController.searchBar.placeholder = "검색"
         getList()
     }
     
