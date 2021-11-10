@@ -13,14 +13,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var btnCallHospital: UIButton!
     @IBOutlet weak var btnCallAmbassy: UIButton!
     
-    var firstCallNum: String?
-    var secondCallNum: String?
-    var thirdCallNum: String?
+    var nationName: String!
+    var firstCallNum: String!
+    var secondCallNum: String!
+    var thirdCallNum: String!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let country = UserDefaults.standard.string(forKey: "nationName") else { return }
-        btnCurrentNation.setTitle(country, for: .normal)
+        checkNationData()
     }
     
     override func viewDidLoad() {
@@ -28,7 +28,14 @@ class MainViewController: UIViewController {
         btnShadow(btnCallPolice)
         btnShadow(btnCallHospital)
         btnShadow(btnCallAmbassy)
-        firstCallNum = "01088187907"
+        countryConfigure()
+    }
+    
+    func checkNationData() {
+        guard let name = UserDefaults.standard.string(forKey: "nationName") else { return }
+        print(name)
+        self.btnCurrentNation.setTitle(name, for: .normal)
+        countryConfigure()
     }
     
     func btnShadow(_ btn: UIButton){
@@ -37,6 +44,18 @@ class MainViewController: UIViewController {
         btn.layer.shadowOffset = CGSize(width: 4, height: 4)
         btn.layer.shadowRadius = 5
         btn.layer.shadowOpacity = 0.7
+    }
+    
+    func countryConfigure() {
+        guard let name = UserDefaults.standard.string(forKey: "nationName") else { return }
+        nationName = name
+        self.btnCurrentNation.setTitle(name, for: .normal)
+        guard let policeNumber = UserDefaults.standard.string(forKey: "policeNumber") else { return }
+        guard let emergencyNumber = UserDefaults.standard.string(forKey: "emergencyNumber") else { return }
+        guard let embassyNumber = UserDefaults.standard.string(forKey: "embassyNumber") else { return }
+        firstCallNum = policeNumber
+        secondCallNum = emergencyNumber
+        thirdCallNum = embassyNumber
     }
     
     @IBAction func btnCallTapped(_ sender: UIButton) {
