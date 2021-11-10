@@ -24,8 +24,7 @@ class PopUpViewController: UIViewController {
     
     private func getCountryDate() {
         LoadingIndicator.showLoading()
-        print("\(API.TestKeyword + nationCode)")
-        AF.request(API.TestKeyword + nationCode, method: .get).responseJSON { response in
+        AF.request("\(API.CountryURL)/nationInfo?nationCode=\(nationCode)", method: .get).responseJSON { response in
             do {
                 let decoder = JSONDecoder()
                 var nationData: Country

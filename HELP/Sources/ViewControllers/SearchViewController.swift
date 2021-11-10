@@ -50,7 +50,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     func getList() {
         LoadingIndicator.showLoading()
         // AF.request().responseJSON으로 호출하면 JSON형식의 response를 받는다.
-        AF.request(API.TestList, method: .get).responseJSON { response in
+        AF.request("\(API.CountryURL)/nationList", method: .get).responseJSON { response in
             // response의 데이터를 받을 [Nation] 타입의 리스트 변수
             var countries: Nation
             do {
