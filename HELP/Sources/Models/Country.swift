@@ -7,42 +7,52 @@
 
 import Foundation
 
-struct Country: Codable {
-    let id: String
-    let name: String
-}
-
 struct NationElement: Codable {
-    let nationCode, nationName, policeCall, fireCall, embassyCall, embassyLoc: String
-    
+    let nationCode, nationName, nationPic: String
+
     enum CodingKeys: String, CodingKey {
         case nationCode = "nation_code"
         case nationName = "nation_name"
-        case policeCall = "police_call"
-        case fireCall = "fire_call"
-        case embassyCall = "embassy_call"
-        case embassyLoc = "embassy_loc"
+        case nationPic = "nation_pic"
     }
 }
 
 typealias Nation = [NationElement]
 
-public var countries = [
-    ["nationalCode":"KR", "name":"대한민국"],
-    ["nationalCode":"AU", "name":"호주"],
-    ["nationalCode":"CA", "name":"캐나다"],
-    ["nationalCode":"CN", "name":"중국"],
-    ["nationalCode":"DE", "name":"독일"],
-    ["nationalCode":"GB", "name":"영국"],
-    ["nationalCode":"HK", "name":"홍콩"],
-    ["nationalCode":"ID", "name":"인도네시아"],
-    ["nationalCode":"JP", "name":"일본"],
-    ["nationalCode":"MY", "name":"말레이시아"],
-    ["nationalCode":"PH", "name":"필리핀"],
-    ["nationalCode":"SG", "name":"싱가포르"],
-    ["nationalCode":"TH", "name":"태국"],
-    ["nationalCode":"TW", "name":"타이완"],
-    ["nationalCode":"US", "name":"미국"],
-    ["nationalCode":"VN", "name":"베트남"],
-]
+struct Country: Codable {
+    let nationCode,
+        nationName,
+        embassyName,
+        embassyLOC,
+        embassyAddress,
+        embassyCall,
+        embassyCall2,
+        embassyCall3,
+        embassyECall,
+        embassyECall2,
+        embassyECall3,
+        policeCall,
+        ambulCall,
+        fireCall,
+        embassyEtc,
+        nationPic: String?
 
+    enum CodingKeys: String, CodingKey {
+        case nationCode = "nation_code"
+        case nationName = "nation_name"
+        case embassyName = "embassy_name"
+        case embassyLOC = "embassy_loc"
+        case embassyAddress = "embassy_adress"
+        case embassyCall = "embassy_call"
+        case embassyCall2 = "embassy_call2"
+        case embassyCall3 = "embassy_call3"
+        case embassyECall = "embassy_e_call"
+        case embassyECall2 = "embassy_e_call2"
+        case embassyECall3 = "embassy_e_call3"
+        case policeCall = "police_call"
+        case ambulCall = "ambul_call"
+        case fireCall = "fire_call"
+        case embassyEtc = "embassy_etc"
+        case nationPic = "nation_pic"
+    }
+}

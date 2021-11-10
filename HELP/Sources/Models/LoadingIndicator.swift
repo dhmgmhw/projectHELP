@@ -12,7 +12,6 @@ class LoadingIndicator {
         DispatchQueue.main.async {
             // 최상단에 있는 window 객체 획득
             guard let window = UIApplication.shared.windows.last else { return }
-
             let loadingIndicatorView: UIActivityIndicatorView
             if let existedView = window.subviews.first(where: { $0 is UIActivityIndicatorView } ) as? UIActivityIndicatorView {
                 loadingIndicatorView = existedView
@@ -23,7 +22,6 @@ class LoadingIndicator {
                 loadingIndicatorView.color = .lightGray
                 window.addSubview(loadingIndicatorView)
             }
-
             loadingIndicatorView.startAnimating()
         }
     }

@@ -12,7 +12,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 
     @IBOutlet weak var tvCountries: UITableView!
     let searchController = UISearchController()
-    let list = countries
     
     var listData: Nation = []
     var filteredList: Nation = []
@@ -32,13 +31,13 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         tvCountries.dataSource = self
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "검색"
+    
         getList()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text?.lowercased() else { return }
-        self.filteredList = self.listData.filter { $0.nationName.lowercased().contains(text) }
+        guard let text = searchController.searchBar.text else { return }
+        self.filteredList = self.listData.filter { $0.nationName.contains(text) }
         self.tvCountries.reloadData()
     }
     
@@ -49,9 +48,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
     
     func getList() {
         LoadingIndicator.showLoading()
-        let url = "https://6155639c93e3550017b08978.mockapi.io/countries"
         // AF.request().responseJSON으로 호출하면 JSON형식의 response를 받는다.
-        AF.request(url, method: .get).responseJSON { response in
+        AF.request("\(API.CountryURL)/nationList", method: .get).responseJSON { response in
             // response의 데이터를 받을 [Nation] 타입의 리스트 변수
             var countries: Nation
             do {
@@ -62,6 +60,9 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                     // response의 data를 [Nation]로 변환
                     countries = try decoder.decode(Nation.self, from: response.data!)
                     self.listData = countries
+                    self.listData = self.listData.sorted(by: {
+                        $0.nationName.compare($1.nationName) == .orderedAscending
+                    })
                     // reload Data!
                     DispatchQueue.main.async {
                         self.tvCountries.reloadData()
@@ -84,12 +85,10 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nationName = self.listData[indexPath.row].nationName
         let nationCode = self.listData[indexPath.row].nationCode
-        UserDefaults.standard.set(nationName, forKey: "nationName")
-        UserDefaults.standard.set(nationCode, forKey: "nationCode")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "popUpView") as! PopUpViewController
+        vc.nationCode = nationCode
         vc.modalTransitionStyle = .coverVertical
         self.present(vc, animated: true, completion: nil)
     }
@@ -105,11 +104,14 @@ extension SearchViewController: UITableViewDataSource {
         // 필터링된 리스트 반환
         if self.isFiltering {
             cell.lblCountry.text = "\(filteredList[indexPath.row].nationName)"
-            cell.imgFlag.image = UIImage(named: "\(filteredList[indexPath.row].nationCode.lowercased()).png")
+            cell.imgFlag.image = UIImage(named:filteredList[indexPath.row].nationPic.lowercased())
         } else {
             cell.lblCountry.text = "\(listData[indexPath.row].nationName)"
-            cell.imgFlag.image = UIImage(named: "\(listData[indexPath.row].nationCode.lowercased()).png")
+            cell.imgFlag.image = UIImage(named: listData[indexPath.row].nationPic.lowercased())
         }
+        cell.imgFlag.layer.borderWidth = 1.0
+        cell.imgFlag.layer.borderColor = UIColor.lightGray.cgColor
+        cell.imgFlag.layer.cornerRadius = 3.0
         cell.selectionStyle = .none
         return cell
     }
