@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
             btnCallTapped(firstCallNum)
         case "병원":
             btnCallTapped(secondCallNum)
-        case "대사/영사관":
+        case "영사콜센터":
             btnCallTapped(thirdCallNum)
         default:
             break
