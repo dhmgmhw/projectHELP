@@ -23,7 +23,8 @@ class BaseTabBarController: UITabBarController {
         UserDefaults.standard.set("112", forKey: "policeNumber")
         UserDefaults.standard.set("119", forKey: "emergencyNumber")
         UserDefaults.standard.set("0232100404", forKey: "embassyNumber")
-        UserDefaults.standard.set("서울특별시 서초구 남부순환로 2558 외교타운 6층 외교부 영사민원실", forKey: "embassyAddress")
+        UserDefaults.standard.set("외교부 영사민원실", forKey: "embassyName")
+        UserDefaults.standard.set("37.483451074521504, 127.02932081899209", forKey: "embassyAddress")
         selectedIndex = defaultIndex
     }
 }

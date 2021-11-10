@@ -174,7 +174,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let name = UserDefaults.standard.string(forKey: "embassyName")!
         annotation.title = name
-        print(annotation)
         self.mapView.addAnnotation(annotation)
     }
     
