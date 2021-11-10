@@ -85,12 +85,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nationName = self.listData[indexPath.row].nationName
         let nationCode = self.listData[indexPath.row].nationCode
-        let nationPic = self.listData[indexPath.row].nationPic
-        UserDefaults.standard.set(nationName, forKey: "nationName")
-        UserDefaults.standard.set(nationCode, forKey: "nationCode")
-        UserDefaults.standard.set(nationPic, forKey: "nationPic")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "popUpView") as! PopUpViewController
         vc.nationCode = nationCode
