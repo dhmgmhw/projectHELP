@@ -13,9 +13,11 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var imgFlag: UIImageView!
     @IBOutlet weak var lblPoliceNumber: UILabel!
     @IBOutlet weak var lblEmergencyNumber: UILabel!
-    @IBOutlet weak var lblAmbassyNumber: UILabel!
+    @IBOutlet weak var lblEmbassyNumber: UILabel!
     
     var nationCode: String = ""
+    
+    var nation: Country!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,8 @@ class PopUpViewController: UIViewController {
                 var nationData: Country
                 switch (response.result) {
                 case .success:
-                    guard let value = String(data: response.data!, encoding: .utf8) else { return }
-                    print(value)
                     nationData = try decoder.decode(Country.self, from: response.data!)
+                    self.nation = nationData
                     self.configureOutlets(nationData)
                     LoadingIndicator.hideLoading()
                 case .failure(let error):
@@ -58,17 +59,24 @@ class PopUpViewController: UIViewController {
         guard let police = data.policeCall else { return }
         guard let ambul = data.ambulCall else { return }
         guard let embassy = data.embassyCall else { return }
-
+        
         lblName.text = name
         let img = UIImage.init(named: pic.lowercased())
         imgFlag.image = img
         lblPoliceNumber.text = police
         lblEmergencyNumber.text = ambul
-        lblAmbassyNumber.text = embassy
+        lblEmbassyNumber.text = embassy
     }
     
     @IBAction func btnSetTapped(_ sender: UIButton) {
+        UserDefaults.standard.set(nation.nationName, forKey: "nationName")
+        UserDefaults.standard.set(nation.policeCall, forKey: "policeNumber")
+        UserDefaults.standard.set(nation.ambulCall, forKey: "emergencyNumber")
+        UserDefaults.standard.set(nation.embassyCall, forKey: "embassyNumber")
+        UserDefaults.standard.set(nation.embassyAddress, forKey: "embassyAddress")
+        UserDefaults.standard.set(nation.embassyName, forKey: "embassyName")
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 
 }
+
