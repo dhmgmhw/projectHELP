@@ -19,6 +19,9 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgFlag.layer.borderWidth = 1.0
+        imgFlag.layer.borderColor = UIColor.lightGray.cgColor
+        imgFlag.layer.cornerRadius = 3.0
         getCountryDate()
     }
     

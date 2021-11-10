@@ -12,7 +12,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
 
     @IBOutlet weak var tvCountries: UITableView!
     let searchController = UISearchController()
-//    let list = countries
     
     var listData: Nation = []
     var filteredList: Nation = []
@@ -60,7 +59,6 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                 case .success:
                     // response의 data를 [Nation]로 변환
                     countries = try decoder.decode(Nation.self, from: response.data!)
-//                    print(countries)
                     self.listData = countries
                     self.listData = self.listData.sorted(by: {
                         $0.nationName.compare($1.nationName) == .orderedAscending
@@ -116,6 +114,10 @@ extension SearchViewController: UITableViewDataSource {
             cell.lblCountry.text = "\(listData[indexPath.row].nationName)"
             cell.imgFlag.image = UIImage(named: listData[indexPath.row].nationPic.lowercased())
         }
+        cell.imgFlag.layer.borderWidth = 1.0
+        cell.imgFlag.layer.borderColor = UIColor.lightGray.cgColor
+        cell.imgFlag.layer.cornerRadius = 3.0
+        cell.selectionStyle = .none
         return cell
     }
 }
