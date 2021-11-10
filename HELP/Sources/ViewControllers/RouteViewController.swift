@@ -30,7 +30,6 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         } else {
             lblDestinationDistance.text = "\(String( Int( ceil(destinationDistance) ) ) )m"
         }
-        
         guard let startingPoint = startingPoint else { return }
         guard let destination = destination else { return }
         let loc1 = CLLocationCoordinate2D.init(latitude: startingPoint.coordinate.latitude, longitude: startingPoint.coordinate.longitude)
@@ -53,12 +52,9 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationCoordinate, addressDictionary: nil))
         request.requestsAlternateRoutes = true
         request.transportType = .walking
-        
         let directions = MKDirections(request: request)
-        
         directions.calculate { [unowned self] response, error in
             guard let unwrappedResponse = response else { return }
-            
             //for getting just one route
             if let route = unwrappedResponse.routes.first {
                 timeForDistance(route.distance)
