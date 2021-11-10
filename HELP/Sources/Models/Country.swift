@@ -24,7 +24,7 @@ struct Country: Codable {
         nationName,
         embassyName,
         embassyLOC,
-        embassyAdress,
+        embassyAddress,
         embassyCall,
         embassyCall2,
         embassyCall3,
@@ -42,7 +42,7 @@ struct Country: Codable {
         case nationName = "nation_name"
         case embassyName = "embassy_name"
         case embassyLOC = "embassy_loc"
-        case embassyAdress = "embassy_adress"
+        case embassyAddress = "embassy_adress"
         case embassyCall = "embassy_call"
         case embassyCall2 = "embassy_call2"
         case embassyCall3 = "embassy_call3"
