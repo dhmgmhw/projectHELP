@@ -113,7 +113,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
             
             for item in response.mapItems {
                 if let name = item.name,
-                    let location = item.placemark.location {
+                   let location = item.placemark.location {
                     let latitude = location.coordinate.latitude
                     let longitude = location.coordinate.longitude
                     let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta:0.1, longitudeDelta:0.1))
@@ -129,7 +129,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
-    
     // 어노테이션 제거 함수
     func removeAllAnnotations() {
         let annotations = mapView.annotations.filter {
@@ -137,7 +136,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         }
         mapView.removeAnnotations(annotations)
     }
-    
+        
     // 내 위치 정보 불러오기 함수
     func setMyLocationInfo() {
         findAddr(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude)
@@ -156,13 +155,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate  {
         }
     }
     
-    
     @IBAction func btnPointTapped(_ sender: UIButton) {
         if sender.currentTitle == "경찰서" {
             searchPlaces("police station")
         } else {
             searchPlaces("hospital")
         }
+    }
+    
+    @IBAction func btnEmbassyTapped(_ sender: UIButton) {
+        removeAllAnnotations()
+        guard let coordinate = UserDefaults.standard.string(forKey: "embassyAddress") else { return }
+        let latitude = Double(coordinate.components(separatedBy: ", ")[0])!
+        let longitude = Double(coordinate.components(separatedBy: ", ")[1])!
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta:0.1, longitudeDelta:0.1))
+        self.mapView.setRegion(region, animated: true)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let name = UserDefaults.standard.string(forKey: "embassyName")!
+        annotation.title = name
+        print(annotation)
+        self.mapView.addAnnotation(annotation)
     }
     
     // Find route!
@@ -199,7 +212,6 @@ extension MapViewController: UISearchBarDelegate {
     }
 }
 
-
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation else { return }
@@ -213,7 +225,7 @@ extension MapViewController: MKMapViewDelegate {
         selectedAnnotation = annotation
         lblPlaceName.text = name[0]
         destinationName = name[0]
-        lblAddress.text = name[1]
+        lblAddress.text = subtitle
         if let distance = currentLocation?.distance(from: foundLocation) {
             if distance > 1000 {
                 lblDistance.text = "\(String( Int( ceil(distance) / 1000 ) ) ) Km"
