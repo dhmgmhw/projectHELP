@@ -1,5 +1,5 @@
 # 🛫 해업(Help!)
-<img width="500" alt="스크린샷 2021-11-15 오후 1 38 20" src="https://user-images.githubusercontent.com/73983229/141724708-201cf215-9f4c-48e0-a8ec-0416462d18bd.png">
+<img width="800" alt="스크린샷 2021-11-15 오후 2 01 19" src="https://user-images.githubusercontent.com/73983229/141725234-52f581cd-0c61-45b2-91c1-985c1b51bf95.png">
 
 - 여행자들을 위한 각 여행지별 긴급번호, 응급콜 원터치 연결 어플리케이션
 - 근처 경찰서 및 병원 위치를 검색할 수 있는 지도 시스템 구축
