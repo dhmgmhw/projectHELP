@@ -35,6 +35,12 @@
 - CocoaPods
 - Sourcetree
 
+## ⚒개발 환경(Server)
+- eclipse
+- Spring boot
+- Oracle DB
+- AWS
+
 ## 📔협업
 - Figma
 - Notion
