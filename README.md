@@ -12,15 +12,15 @@
 - 팀원
   - **CLIENT**
     
-    ![](https://img.shields.io/badge/문형원-Swift-orange?style=for-the-badge)
+    ![](https://img.shields.io/badge/Swift-문형원-orange?style=for-the-badge)
         
   - **BACKEND** 
 
-     ![](https://img.shields.io/badge/최학준-Spring-brightgreen?style=for-the-badge)
+     ![](https://img.shields.io/badge/Spring-최학준-brightgreen?style=for-the-badge)
      
   - **UX/UI** 
 
-     ![](https://img.shields.io/badge/강동우-UX/UI-blueviolet?style=for-the-badge)
+     ![](https://img.shields.io/badge/UX/UI-강동우-blueviolet?style=for-the-badge)
 
 
 ## ⚒개발 환경(Client)
