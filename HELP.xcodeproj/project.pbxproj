@@ -280,7 +280,6 @@
 		73FAD679271011610006D02F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAD678271011610006D02F /* MainViewController.swift */; };
 		73FAD67D271023AC0006D02F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FAD67C271023AB0006D02F /* MapViewController.swift */; };
 		741A7FD21A0720BD1315267E /* Pods_HELP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DDA387B7997BB9F74F5261 /* Pods_HELP.framework */; };
-		D4984314A82EF1648CCF46DC /* Pods_HELP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02E8AB9582E476806C46F63 /* Pods_HELP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -570,7 +569,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				741A7FD21A0720BD1315267E /* Pods_HELP.framework in Frameworks */,
-				D4984314A82EF1648CCF46DC /* Pods_HELP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,7 +993,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					7386F48B26DF631D001D1701 = {
 						CreatedOnToolsVersion = 12.5.1;
