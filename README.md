@@ -42,8 +42,8 @@ https://www.youtube.com/watch?v=ZGwKJ7d70W0&ab_channel=HonangeM
 
 ## ⚒개발 환경(Server)
 - eclipse
-- Spring boot
-- Oracle DB
+- Spring
+- MariaDB
 - AWS
 
 ## 📔협업
