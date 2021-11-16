@@ -9,8 +9,13 @@
 - 경찰, 병원 등의 응급시설 전화연결
 - gps기반 현재위치 및 주변 응급시설 검색
 
+## 📱 화면구성
+<img width="671" alt="스크린샷 2021-11-16 오후 3 48 40" src="https://user-images.githubusercontent.com/73983229/141935500-fa2bb91c-3923-4a32-b4de-5ca98aaaa8bc.png">
+
 
 ## 🎥 시연영상
+https://www.youtube.com/watch?v=ZGwKJ7d70W0&ab_channel=HonangeM
+
 
 ## 📌 프로젝트 기간 및 팀원
 2021년 9월 ~ 11월
