@@ -37,8 +37,8 @@ https://www.youtube.com/watch?v=ZGwKJ7d70W0&ab_channel=HonangeM
 ## ⚒개발 환경(Client)
 - Xcode
 - Swift
-- CocoaPods
 - Sourcetree
+- UIKit
 
 ## ⚒개발 환경(Server)
 - Eclipse
